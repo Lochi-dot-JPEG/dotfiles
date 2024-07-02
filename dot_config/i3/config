@@ -67,8 +67,8 @@ exec xcape -e 'Caps_Lock=Escape' -t 200
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media player controls
@@ -163,6 +163,13 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Make the currently focused window a scratchpad
+bindsym $mod+d move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+g scratchpad show
+
+
 # assign workspaces to monitors
 workspace $ws1 output $m1
 workspace $ws2 output $m1
@@ -242,21 +249,24 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 40 px or 40 ppt
+        bindsym j resize grow height 40 px or 40 ppt
+        bindsym k resize shrink height 40 px or 40 ppt
+        bindsym l resize grow width 40 px or 40 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 40 px or 40 ppt
+        bindsym Down resize grow height 40 px or 40 ppt
+        bindsym Up resize shrink height 40 px or 40 ppt
+        bindsym Right resize grow width 40 px or 40 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
+        bindsym q move absolute position center
+        bindsym w resize set 1820 980 px
+        bindsym e resize set 1420 680 px
 }
 
 bindsym $mod+r mode "resize"
