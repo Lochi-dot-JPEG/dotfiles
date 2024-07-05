@@ -289,7 +289,7 @@ bar {
         }
         font pango:FontAwesome, Jetbrains Mono 12
         status_command bumblebee-status \
-        -m pipewire playerctl battery date time \
+        -m pipewire playerctl brightness battery date time \
         -p root.path=/ playerctl.hide="true" playerctl.layout="playerctl.song, playerctl.prev, playerctl.pause, playerctl.next" time.format="%I:%M %p" date.format="%a, %b %d %Y" pipewire.percent_change=1% playerctl.format='{{artist}} - {{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
         -t custom_rose_pine
         #status_command i3status
