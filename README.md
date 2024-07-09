@@ -1,3 +1,5 @@
+![alt text](https://github.com/Lochi-dot-JPEG/dotfiles/blob/main/thumbnail.png?raw=true)
+
 **Rose pine themed dotfiles for**
 - i3wm, with keybinds for 40% keyboards
 - kitty terminal
