@@ -148,7 +148,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-	--'andweeb/presence.nvim',
+	"andweeb/presence.nvim",
 	{
 		"ggandor/leap.nvim",
 		dependencies = { "tpope/vim-repeat" },
