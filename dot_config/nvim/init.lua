@@ -914,6 +914,12 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"catppuccin/nvim",
+	},
+	{
+		"shaunsingh/nord.nvim",
+	},
+	{
 		"rose-pine/neovim",
 	},
 	{

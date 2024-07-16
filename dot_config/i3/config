@@ -39,6 +39,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id picom -CGb
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -48,7 +49,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 
 #exec --no-startup-id xsetroot -solid "#333333" # blank colour
-exec --no-startup-id feh --bg-scale ~/.config/i3/bay.JPG
+#exec --no-startup-id feh --bg-scale ~/.config/i3/bay.JPG
+exec --no-startup-id feh --bg-scale ~/.config/i3/shaded_landscape.png
 #Bacground image
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -240,6 +242,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 default_border pixel 2
 smart_gaps on
+gaps inner 6px
+hide_edge_borders both
 mouse_warping output
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -273,27 +277,28 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        workspace_min_width 30
-        i3bar_command i3bar --transparency
-        colors {
-                #background #0000000
-                background $base
-
-                focused_workspace $rose $rose $base
-                active_workspace $rose $rose $base
-                inactive_workspace $base $base $subtle
-                urgent_workspace $love $love $base
-
-        }
-        font pango:FontAwesome, Jetbrains Mono 12
-        status_command bumblebee-status \
-        -m pipewire playerctl brightness battery date time \
-        -p root.path=/ playerctl.hide="true" playerctl.layout="playerctl.song, playerctl.prev, playerctl.pause, playerctl.next" time.format="%I:%M %p" date.format="%a, %b %d %Y" pipewire.percent_change=1% playerctl.format='{{artist}} - {{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-        -t custom_rose_pine
-        #status_command i3status
-}
+#bar {
+#        position top
+#        workspace_min_width 30
+#        i3bar_command i3bar --t
+#        colors {
+#                background #0000000
+#                statusline #0000000
+#                #background $base
+#
+#                focused_workspace $rose $rose $base
+#                active_workspace $rose $rose $base
+#                inactive_workspace $base $base $subtle
+#                urgent_workspace $love $love $base
+#
+#        }
+#        font pango:FontAwesome, Jetbrains Mono 12
+#        status_command bumblebee-status \
+#        -m pipewire playerctl brightness battery date time \
+#        -p root.path=/ playerctl.hide="true" playerctl.layout="playerctl.song, playerctl.prev, playerctl.pause, playerctl.next" time.format="%I:%M %p" date.format="%a, %b %d %Y" pipewire.percent_change=1% playerctl.format='{{artist}} - {{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
+#        -t custom_rose_pine
+#        #status_command i3status
+#}
 
 # Teming border and Windows --------------
 # target                 title     bg    text   indicator  border
