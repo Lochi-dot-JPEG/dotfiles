@@ -39,7 +39,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id picom -CGb
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id pkill -USR1 polybar
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -241,8 +241,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 default_border pixel 2
-smart_gaps on
-gaps inner 6px
+#smart_gaps on
+#gaps inner 6px
 hide_edge_borders both
 mouse_warping output
 # resize window (you can also use the mouse for that)
