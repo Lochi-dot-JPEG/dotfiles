@@ -39,7 +39,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id picom -CGb
-exec_always --no-startup-id pkill -USR1 polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
