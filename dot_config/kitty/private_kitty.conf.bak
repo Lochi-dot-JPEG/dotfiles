@@ -1124,12 +1124,12 @@ enable_audio_bell no
 #: Color scheme {{{
 
 #foreground #dddddd
-#background #170b17
-background #110612
+#background #181926
+# background #110612
 
 #: The foreground and background colors.
 
-background_opacity 0.75
+background_opacity 0.90
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -2477,3 +2477,9 @@ background_opacity 0.75
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_THEME
+# Rosé Pine
+include current-theme.conf
+# END_KITTY_THEME
