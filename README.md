@@ -1,12 +1,12 @@
 ![alt text](https://github.com/Lochi-dot-JPEG/dotfiles/blob/main/rice.png?raw=true)
 
-**Rose pine themed dotfiles for**
-- i3wm, with keybinds for 40% keyboards
+**Catppuccin themed dotfiles for**
+- i3wm, with polybar and keybinds for 40% keyboards
 - kitty terminal
 - neovim
 
 **BONUS**
-- neofetch with blahaj ascii art
+- fastfetch with blahaj ascii art
 
 **Installation**
 1. Clone repo
@@ -14,5 +14,3 @@
 3. Copy any other files to ~/
 
 Idk if there is a better way to copy using chezmoi if there is, try that :)
-
-*If you have any problems please open an issue here on github*
