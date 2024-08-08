@@ -36,6 +36,9 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/backgrounds/flat_color.png
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+#OpenTabletDriver daemon autostart
+exec --no-startup-id otd-daemon
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 
@@ -65,7 +68,7 @@ tiling_drag modifier titlebar
 
 # start apps
 bindsym $mod+e exec kitty
-bindsym $mod+w exec librewolf
+bindsym $mod+w exec brave
 
 # kill focused window
 bindsym $mod+q kill
@@ -202,7 +205,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 default_border pixel 2
 #smart_gaps on
-gaps inner 6px
+#gaps inner 6px
 hide_edge_borders smart
 mouse_warping output
 # resize window (you can also use the mouse for that)
