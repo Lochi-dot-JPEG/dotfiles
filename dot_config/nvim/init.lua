@@ -27,7 +27,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = "unnamedplus"
+--  vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -150,6 +150,18 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	"andweeb/presence.nvim",
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+	},
+	{
+		"2kabhishek/nerdy.nvim",
+		dependencies = {
+			"stevearc/dressing.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		cmd = "Nerdy",
+	},
 	{
 		"ggandor/leap.nvim",
 		dependencies = { "tpope/vim-repeat" },
@@ -990,8 +1002,10 @@ require("lazy").setup({
 				options = {
 					icons_enabled = true,
 					theme = "auto",
-					component_separators = { left = "", right = "" },
-					section_separators = { left = "", right = "" },
+					--component_separators = { left = "", right = "" },
+					--section_separators = { left = "", right = "" },
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
 						statusline = {},
 						winbar = {},
@@ -1009,9 +1023,9 @@ require("lazy").setup({
 					lualine_a = {
 						"mode",
 					},
-					lualine_b = { "branch", "diff", "diagnostics" },
+					lualine_b = { "diagnostics" },
 					lualine_c = { "filename" },
-					lualine_x = { "encoding", "fileformat", "filetype" },
+					lualine_x = { "filetype" },
 					lualine_y = {
 						{
 							"datetime",
