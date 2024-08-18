@@ -31,7 +31,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #Background image/colour
 #exec --no-startup-id xsetroot -solid "#111116" # blank colour
 #exec --no-startup-id feh --bg-scale ~/.config/i3/backgrounds/bay.JPG
-exec --no-startup-id feh --bg-scale ~/.config/i3/backgrounds/flat_color.png
+#exec --no-startup-id feh --bg-scale ~/.config/i3/backgrounds/flat_color.png
+
+# change wallpapers
+bindsym $mod+$alt+b exec --no-startup-id feh ~/Pictures/Wallpapers/* --recursive --randomize --bg-fill
+exec_always --no-startup-id feh ~/Pictures/Wallpapers/* --recursive --randomize --bg-fill
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
