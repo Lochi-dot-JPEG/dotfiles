@@ -25,7 +25,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 
 #Background image/colour
@@ -50,6 +50,11 @@ set $refresh_i3status killall -SIGUSR1 i3status
 #laptop caps binds
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 exec --no-startup-id xcape -e 'Caps_Lock=Escape' -t 200
+
+# key repeat rate
+exec --no-startup-id xset r rate 200 30
+
+
 
 # Assign apps to workspaces
 #assign [class="kitty"] 4
@@ -212,6 +217,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 default_border pixel 2
+default_floating_border normal 2
 #smart_gaps on
 #gaps inner 6px
 hide_edge_borders smart
