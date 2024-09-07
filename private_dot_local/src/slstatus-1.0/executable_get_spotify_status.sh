@@ -31,11 +31,11 @@ if [ "$1" == "--status" ]; then
     echo "$STATUS"
 else
     if [ "$STATUS" = "Stopped" ]; then
-        echo ""
+        echo " "
     elif [ "$STATUS" = "Paused"  ]; then
         playerctl --player=$PLAYER metadata --format "$FORMAT"
     elif [ "$STATUS" = "No player is running"  ]; then
-        echo ""
+        echo " "
     else
         playerctl --player=$PLAYER metadata --format "$FORMAT"
     fi
