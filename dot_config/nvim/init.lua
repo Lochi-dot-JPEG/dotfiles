@@ -138,6 +138,12 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+local gdproject = io.open(vim.fn.getcwd() .. "/project.godot", "r")
+if gdproject then
+	io.close(gdproject)
+	vim.fn.serverstart("./godothost")
+end
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -150,7 +156,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-	"andweeb/presence.nvim",
+	--"andweeb/presence.nvim",
 	{
 		"epwalsh/pomo.nvim",
 		version = "*", -- Recommended, use latest release instead of latest commit
@@ -328,6 +334,7 @@ require("lazy").setup({
 					"LineNr",
 					"NonText",
 					"SignColumn",
+					"ColorColumn",
 					"CursorLine",
 					"CursorLineNr",
 					"StatusLine",
@@ -345,7 +352,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-	"habamax/vim-godot",
+	{ "habamax/vim-godot", event = "VimEnter" },
 	"preservim/vim-pencil",
 	"lambdalisue/vim-suda",
 	-- nvim v0.8.0
@@ -725,7 +732,7 @@ require("lazy").setup({
 
 			-- Enable the following language servers
 			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-			require("lspconfig").gdscript.setup({ capabilities })
+			require("lspconfig").gdscript.setup(capabilities)
 			-- enable the following language servers
 			--  feel free to add/remove any lsps that you want here. they will automatically be installed.
 			--
@@ -1120,7 +1127,19 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "gdscript" },
+			ensure_installed = {
+				"bash",
+				"c",
+				"html",
+				"lua",
+				"luadoc",
+				"markdown",
+				"vim",
+				"vimdoc",
+				"gdscript",
+				"godot_resource",
+				"gdshader",
+			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
 			highlight = {
@@ -1165,8 +1184,8 @@ require("lazy").setup({
 	--  Here are some example plugins that I've included in the Kickstart repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
 	require("kickstart.plugins.debug"),
-	-- require 'kickstart.plugins.indent_line',
-	-- require 'kickstart.plugins.lint',
+	require("kickstart.plugins.indent_line"),
+	require("kickstart.plugins.lint"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.
