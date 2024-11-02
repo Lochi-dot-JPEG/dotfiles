@@ -90,6 +90,9 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 --vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+-- Open todo file
+vim.keymap.set("n", "<leader>t", ":e todo.txt<CR>", { desc = "Open [T]odo.txt" })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -157,6 +160,65 @@ end
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	--"andweeb/presence.nvim",
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = true,
+		ft = "markdown",
+		-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+		-- event = {
+		--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+		--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+		--   -- refer to `:h file-pattern` for more examples
+		--   "BufReadPre path/to/my-vault/*.md",
+		--   "BufNewFile path/to/my-vault/*.md",
+		-- },
+		dependencies = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
+
+			-- see below for full list of optional dependencies 👇
+		},
+		opts = {
+			workspaces = {
+				{
+					name = "personal",
+					path = "~/vaults/personal",
+				},
+				{
+					name = "work",
+					path = "~/vaults/work",
+				},
+			},
+
+			-- see below for full list of options 👇
+		},
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {--[[ things you want to change go here]]
+		},
+	},
+	{
+		"shaun-mathew/Chameleon.nvim",
+		config = function()
+			require("chameleon").setup()
+			priority = 0, -- make sure to load this before all the other start plugins
+		end,
+	},
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		-- Optional; default configuration will be used if setup isn't called.
+		config = function()
+			require("everforest").setup({
+				-- Your config here
+			})
+		end,
+	},
 	{
 		"epwalsh/pomo.nvim",
 		version = "*", -- Recommended, use latest release instead of latest commit
@@ -355,30 +417,88 @@ require("lazy").setup({
 	{ "habamax/vim-godot", event = "VimEnter" },
 	"preservim/vim-pencil",
 	"lambdalisue/vim-suda",
-	-- nvim v0.8.0
-	{
-		"kdheepak/lazygit.nvim",
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
-		},
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		-- setting the keybinding for LazyGit with 'keys' is recommended in
-		-- order to load the plugin when the command is run for the first time
-		keys = {
-			{ "<leader>h", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-		},
-	},
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically-- Lua
 	{
 		"folke/zen-mode.nvim",
 		opts = {
+			window = {
+				backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+				-- height and width can be:
+				-- * an absolute number of cells when > 1
+				-- * a percentage of the width / height of the editor when <= 1
+				-- * a function that returns the width or the height
+				width = 120, -- width of the Zen window
+				height = 1, -- height of the Zen window
+				-- by default, no options are changed for the Zen window
+				-- uncomment any of the options below, or add other vim.wo options you want to apply
+				options = {
+					-- signcolumn = "no", -- disable signcolumn
+					-- number = false, -- disable number column
+					-- relativenumber = false, -- disable relative numbers
+					-- cursorline = false, -- disable cursorline
+					-- cursorcolumn = false, -- disable cursor column
+					-- foldcolumn = "0", -- disable fold column
+					-- list = false, -- disable whitespace characters
+				},
+			},
+			plugins = {
+				-- disable some global vim options (vim.o...)
+				-- comment the lines to not apply the options
+				options = {
+					enabled = true,
+					ruler = false, -- disables the ruler text in the cmd line area
+					showcmd = false, -- disables the command in the last line of the screen
+					-- you may turn on/off statusline in zen mode by setting 'laststatus'
+					-- statusline will be shown only if 'laststatus' == 3
+					laststatus = 3, -- turn off the statusline in zen mode
+				},
+				twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+				gitsigns = { enabled = false }, -- disables git signs
+				tmux = { enabled = false }, -- disables the tmux statusline
+				todo = { enabled = false }, -- if set to "true", todo-comments.nvim highlights will be disabled
+				-- this will change the font size on kitty when in zen mode
+				-- to make this work, you need to set the following kitty options:
+				-- - allow_remote_control socket-only
+				-- - listen_on unix:/tmp/kitty
+				kitty = {
+					enabled = false,
+					font = "+4", -- font size increment
+				},
+				-- this will change the font size on alacritty when in zen mode
+				-- requires  Alacritty Version 0.10.0 or higher
+				-- uses `alacritty msg` subcommand to change font size
+				alacritty = {
+					enabled = false,
+					font = "14", -- font size
+				},
+				-- this will change the font size on wezterm when in zen mode
+				-- See alse also the Plugins/Wezterm section in this projects README
+				wezterm = {
+					enabled = false,
+					-- can be either an absolute font size or the number of incremental steps
+					font = "+4", -- (10% increase per step)
+				},
+				-- this will change the scale factor in Neovide when in zen mode
+				-- See alse also the Plugins/Wezterm section in this projects README
+				neovide = {
+					enabled = false,
+					-- Will multiply the current scale factor by this number
+					scale = 1.2,
+					-- disable the Neovide animations while in Zen mode
+					disable_animations = {
+						neovide_animation_length = 0,
+						neovide_cursor_animate_command_line = false,
+						neovide_scroll_animation_length = 0,
+						neovide_position_animation_length = 0,
+						neovide_cursor_animation_length = 0,
+						neovide_cursor_vfx_mode = "",
+					},
+				},
+			},
+			-- callback where you can add custom code when the Zen window opens
+			on_open = function(win) end,
+			-- callback where you can add custom code when the Zen window closes
+			on_close = function() end,
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
@@ -452,7 +572,7 @@ require("lazy").setup({
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>w", group = "[W]orkspace" },
-				{ "<leader>t", group = "[T]oggle" },
+				--{ "<leader>t", group = "[T]oggle" },
 				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 			})
 		end,
@@ -505,10 +625,6 @@ require("lazy").setup({
 			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 		},
 		config = function()
-			-- Telescope is a fuzzy finder that comes with a lot of different things that
-			-- it can fuzzy find! It's more than just a "file finder", it can search
-			-- many different aspects of Neovim, your workspace, LSP, and more!
-			--
 			-- The easiest way to use Telescope, is to start by doing something like:
 			--  :Telescope help_tags
 			--
@@ -530,11 +646,20 @@ require("lazy").setup({
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
-				-- defaults = {
-				--   mappings = {
-				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-				--   },
-				-- },
+				defaults = {
+					mappings = {
+						["i"] = {
+							["<Tab>"] = require("telescope.actions").close,
+							-- your custom insert mode mappings
+						},
+						["n"] = {
+							["<Tab>"] = require("telescope.actions").close,
+
+							-- your custom normal mode mappings
+						},
+						--i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+					},
+				},
 				-- pickers = {}
 				extensions = {
 					["ui-select"] = {
@@ -1014,6 +1139,39 @@ require("lazy").setup({
 			end,
 		},
 	},
+	{ "rose-pine/neovim", name = "rose-pine" },
+	{
+		"sho-87/kanagawa-paper.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			require("kanagawa-paper").setup({
+				compile = false, -- enable compiling the colorscheme
+				undercurl = true, -- enable undercurls
+				commentStyle = { italic = true },
+				functionStyle = {},
+				keywordStyle = { italic = true },
+				statementStyle = { bold = true },
+				typeStyle = {},
+				transparent = false, -- do not set background color
+				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					palette = {},
+					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+				},
+				overrides = function(colors) -- add/modify highlights
+					return {}
+				end,
+				theme = "wave", -- Load "wave" theme when 'background' option is not set
+				background = { -- map the value of 'background' option to a theme
+					dark = "wave", -- try "dragon" !
+					light = "lotus",
+				},
+			})
+		end,
+	},
 	{
 		"catppuccin/nvim",
 	},
@@ -1216,3 +1374,27 @@ require("lazy").setup({
 })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
+	cmd = "lazygit",
+	hidden = true,
+	dir = "git_dir",
+	direction = "float",
+	float_opts = {
+		border = "curved",
+	},
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+	end,
+	-- function to run on closing the terminal
+	on_close = function(term)
+		vim.cmd("startinsert!")
+	end,
+})
+function _lazygit_toggle()
+	lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
