@@ -11,6 +11,9 @@ vim.opt.relativenumber = true
 -- Enable mouse mode
 vim.opt.mouse = "a"
 
+-- Disable word wrap
+vim.opt.wrap = false
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -152,7 +155,7 @@ end
 --  To update plugins you can run
 --    :Lazy update
 ANIME = {
-	{ "Ayanami.txt", 64, 19 },
+	{ "Ayanami.txt", 66, 19 },
 	-- { "Asuka.txt", 167, 34 },
 	-- { "02_gif.txt", 84, 26 },
 	-- { "02_1_gif.txt", 81, 25 },
@@ -162,11 +165,11 @@ ANIME = {
 	-- { "02_5_gif.txt", 81, 25 },
 	-- { "02_6_gif.txt", 81, 25 },
 }
-math.randomseed(os.time())
+--math.randomseed(os.time())
 require("lazy").setup({
 	{
 		"m00qek/baleia.nvim",
-		version = "*",
+		--version = "*",
 		priority = 100,
 		config = function()
 			vim.g.baleia = require("baleia").setup({})
@@ -178,6 +181,22 @@ require("lazy").setup({
 
 			-- Command to show logs
 			vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
+
+			--vim.api.nvim_create_autocmd("VimEnter", {
+			--	desc = "Highlight when yanking (copying) text",
+			--	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+			--	callback = function()
+			--		vim.execute 'edit todo.txt'
+			--		vim.highlight.on_yank()
+			--	end,
+			--})
+			vim.api.nvim_create_autocmd("BufRead", {
+				pattern = "Ayanami.txt", -- Specify the file name or pattern
+				callback = function()
+					vim.g.baleia.once(vim.api.nvim_get_current_buf())
+				end,
+			})
+			vim.cmd("edit ~/.config/nvim/plugins/Ayanami.txt")
 		end,
 	},
 	--"andweeb/presence.nvim",
@@ -187,6 +206,7 @@ require("lazy").setup({
 	--	cmd = "Alpha",
 	--	opts = function()
 	--		local dashboard = require("alpha.themes.dashboard")
+	--		require("alpha")
 	--		require("alpha.term")
 
 	--		--local button = require("astronvim.utils").alpha_button
@@ -202,10 +222,11 @@ require("lazy").setup({
 
 	--			dashboard.section.terminal.command = "cat " .. THEPATH .. info[1]
 	--			dashboard.section.terminal.width = info[2]
-	--			dashboard.section.terminal.height = 15
+	--			dashboard.section.terminal.height = info[3]
 
 	--			dashboard.opts.layout = {
 	--				dashboard.section.terminal,
+	--				{ type = "button", val = "" },
 	--				--{ type = "padding", val = 2 },
 	--			}
 	--		end
