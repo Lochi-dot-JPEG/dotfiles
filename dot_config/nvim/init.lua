@@ -286,9 +286,8 @@ require("lazy").setup({
 		--   "BufNewFile path/to/my-vault/*.md",
 		-- },keys = {
 		keys = {
-			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "OpenObsidian" },
-			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "OpenObsidian" },
-			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "OpenObsidian" },
+			{ "<leader>so", "<cmd>ObsidianSearch<cr>", desc = "[S]earch [O]bsidian" },
+			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen [O]bsidian" },
 		},
 		dependencies = {
 			-- Required.
