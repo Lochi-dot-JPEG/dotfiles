@@ -7,7 +7,7 @@ local options = {
 		integrations = {},
 		changed_themes = {},
 		transparency = false,
-		theme_toggle = { "onedark", "one_light" },
+		theme_toggle = { "kanagawa", "one_light" },
 	},
 
 	ui = {
@@ -35,7 +35,7 @@ local options = {
 
 		-- lazyload it when there are 1+ buffers
 		tabufline = {
-			enabled = true,
+			enabled = false,
 			lazyload = true,
 			order = { "treeOffset", "buffers", "tabs", "btns" },
 			modules = nil,

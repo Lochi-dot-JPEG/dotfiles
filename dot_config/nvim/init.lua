@@ -1,37 +1,26 @@
 -- Set <space> as the leader keyini
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
-
--- Make line numbers default
+-- Line numbers
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
+-- Enable mouse mode
 vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- Sync clipboard between OS and Neovim. See `:help 'clipboard'`
 vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.opt.breakindent = true
 vim.opt.smartindent = true
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -165,6 +154,18 @@ require("lazy").setup({
 	--"andweeb/presence.nvim",
 	-- "nvim-lua/plenary.nvim",
 
+	{
+		"goolord/alpha-nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			local startify = require("alpha.themes.startify")
+			-- available: devicons, mini, default is mini
+			-- if provider not loaded and enabled is true, it will try to use another provider
+			startify.file_icons.provider = "devicons"
+			require("alpha").setup(startify.config)
+		end,
+		lazy = false,
+	},
 	{
 		"nvchad/ui",
 		config = function()
@@ -519,16 +520,46 @@ require("lazy").setup({
 			-- refer to the configuration section below
 		},
 	},
-	{
-		"startup-nvim/startup.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("startup").setup()
-		end,
-	},
+	--{
+	--	"startup-nvim/startup.nvim",
+	--	dependencies = {
+	--		"nvim-telescope/telescope.nvim",
+	--		"nvim-lua/plenary.nvim",
+	--	},
+	--	config = function()
+	--		require("startup").setup({
+	--			--section_1 = <section> -- for the structure of a section see below
+	--			--section_2 = <section> -- as much sections as you like
+	--			options = {
+	--				mapping_keys = true, -- display mapping (e.g. <leader>ff)
+
+	--				-- if < 1 fraction of screen width
+	--				-- if > 1 numbers of column
+	--				cursor_column = 0.5,
+
+	--				after = function() -- function that gets executed at the end
+	--					--<lua commands>
+	--				end,
+	--				empty_lines_between_mappings = true, -- add an empty line between mapping/commands
+	--				disable_statuslines = true, -- disable status-, buffer- and tablines
+	--				paddings = { 1, 2 }, -- amount of empty lines before each section (must be equal to amount of sections)
+	--			},
+	--			mappings = {
+	--				--execute_command = "<CR>",
+	--				--open_file = "o",
+	--				--open_file_split = "<c-o>",
+	--				--open_section = "<TAB>",
+	--				--open_help = "?",
+	--			},
+	--			colors = {
+	--				background = "#1f2227",
+	--				folded_section = "#56b6c2", -- the color of folded sections
+	--				-- this can also be changed with the `StartupFoldedSection` highlight group
+	--			},
+	--			parts = { "section_1", "section_2" }, -- all sections in order
+	--		})
+	--	end,
+	--},
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
 	-- keys can be used to configure plugin behavior/loading/etc.
@@ -1217,6 +1248,7 @@ require("lazy").setup({
 			--  - yinq - [Y]ank [I]nside [N]ext [']quote
 			--  - ci'  - [C]hange [I]nside [']quote
 			require("mini.ai").setup({ n_lines = 500 })
+			--require("mini.starter").setup({})
 
 			-- Add/delete/replace surroundings (brackets, quotes, etc.)
 			--
