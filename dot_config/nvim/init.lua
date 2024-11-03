@@ -71,6 +71,9 @@ vim.opt.termguicolors = true
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
+-- Remap ; to : to make commands easier
+vim.keymap.set("n", ";", ":")
+
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
@@ -148,24 +151,89 @@ end
 --
 --  To update plugins you can run
 --    :Lazy update
---
--- NOTE: Here is where you install your plugins.
+ANIME = {
+	{ "Ayanami.txt", 64, 19 },
+	-- { "Asuka.txt", 167, 34 },
+	-- { "02_gif.txt", 84, 26 },
+	-- { "02_1_gif.txt", 81, 25 },
+	-- { "02_2_gif.txt", 81, 25 },
+	-- { "02_3_gif.txt", 88, 27 },
+	-- { "02_4_gif.txt", 86, 27 },
+	-- { "02_5_gif.txt", 81, 25 },
+	-- { "02_6_gif.txt", 81, 25 },
+}
+math.randomseed(os.time())
 require("lazy").setup({
+	{
+		"m00qek/baleia.nvim",
+		version = "*",
+		priority = 100,
+		config = function()
+			vim.g.baleia = require("baleia").setup({})
+
+			-- Command to colorize the current buffer
+			vim.api.nvim_create_user_command("BaleiaColorize", function()
+				vim.g.baleia.once(vim.api.nvim_get_current_buf())
+			end, { bang = true })
+
+			-- Command to show logs
+			vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
+		end,
+	},
 	--"andweeb/presence.nvim",
 	-- "nvim-lua/plenary.nvim",
+	--{
+	--	"goolord/alpha-nvim",
+	--	cmd = "Alpha",
+	--	opts = function()
+	--		local dashboard = require("alpha.themes.dashboard")
+	--		require("alpha.term")
 
-	{
-		"goolord/alpha-nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			local startify = require("alpha.themes.startify")
-			-- available: devicons, mini, default is mini
-			-- if provider not loaded and enabled is true, it will try to use another provider
-			startify.file_icons.provider = "devicons"
-			require("alpha").setup(startify.config)
-		end,
-		lazy = false,
-	},
+	--		--local button = require("astronvim.utils").alpha_button
+	--		--local get_icon = require("astronvim.utils").get_icon
+
+	--		if vim.loop.os_uname().sysname == "Linux" then
+	--			dashboard.opts.opts.noautocmd = false
+	--			dashboard.section.terminal.opts.redraw = true
+	--			local idx = math.random(1, #ANIME)
+	--			local info = ANIME[idx]
+	--			--local info = ANIME[0]
+	--			THEPATH = os.getenv("HOME") .. "/.config/nvim/plugins/"
+
+	--			dashboard.section.terminal.command = "cat " .. THEPATH .. info[1]
+	--			dashboard.section.terminal.width = info[2]
+	--			dashboard.section.terminal.height = 15
+
+	--			dashboard.opts.layout = {
+	--				dashboard.section.terminal,
+	--				--{ type = "padding", val = 2 },
+	--			}
+	--		end
+	--		--dashboard.section.header.val = logo
+	--		-- no Idea how it works exaclty, try n error with distinguishable colors lol
+	--		--dashboard.opts.layout = {
+	--		--	dashboard.section.terminal,
+	--		--	--{ type = "padding", val = 2 },
+	--		--}
+	--		return dashboard
+	--	end,
+	--	config = function(_, opts)
+	--		require("alpha").setup(opts.config)
+	--	end,
+	--	lazy = false,
+	--},
+	--	{
+	--		"goolord/alpha-nvim",
+	--		dependencies = { "nvim-tree/nvim-web-devicons" },
+	--		config = function()
+	--			local startify = require("alpha.themes.startify")
+	--			-- available: devicons, mini, default is mini
+	--			-- if provider not loaded and enabled is true, it will try to use another provider
+	--			startify.file_icons.provider = "devicons"
+	--			require("alpha").setup(startify.config)
+	--		end,
+	--		lazy = false,
+	--	},
 	{
 		"nvchad/ui",
 		config = function()
@@ -195,7 +263,12 @@ require("lazy").setup({
 		--   -- refer to `:h file-pattern` for more examples
 		--   "BufReadPre path/to/my-vault/*.md",
 		--   "BufNewFile path/to/my-vault/*.md",
-		-- },
+		-- },keys = {
+		keys = {
+			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "OpenObsidian" },
+			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "OpenObsidian" },
+			{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "OpenObsidian" },
+		},
 		dependencies = {
 			-- Required.
 			"nvim-lua/plenary.nvim",
@@ -208,13 +281,7 @@ require("lazy").setup({
 					name = "personal",
 					path = "~/vaults/personal",
 				},
-				{
-					name = "work",
-					path = "~/vaults/work",
-				},
 			},
-
-			-- see below for full list of options 👇
 		},
 	},
 	{
@@ -297,35 +364,35 @@ require("lazy").setup({
 			require("leap").create_default_mappings()
 		end,
 	},
-	{
-		"mikavilpas/yazi.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		event = "VeryLazy",
-		keys = {
-			-- 👇 in this section, choose your own keymappings!
-			{
-				"<leader>-",
-				function()
-					require("yazi").yazi()
-				end,
-				desc = "Open the file manager",
-			},
-			{
-				-- Open in the current working directory
-				"<leader>cw",
-				function()
-					require("yazi").yazi(nil, vim.fn.getcwd())
-				end,
-				desc = "Open the file manager in nvim's working directory",
-			},
-		},
-		---@type YaziConfig
-		opts = {
-			open_for_directories = false,
-		},
-	},
+	--{
+	--	"mikavilpas/yazi.nvim",
+	--	dependencies = {
+	--		"nvim-lua/plenary.nvim",
+	--	},
+	--	event = "VeryLazy",
+	--	keys = {
+	--		-- 👇 in this section, choose your own keymappings!
+	--		{
+	--			"<leader>-",
+	--			function()
+	--				require("yazi").yazi()
+	--			end,
+	--			desc = "Open the file manager",
+	--		},
+	--		{
+	--			-- Open in the current working directory
+	--			"<leader>cw",
+	--			function()
+	--				require("yazi").yazi(nil, vim.fn.getcwd())
+	--			end,
+	--			desc = "Open the file manager in nvim's working directory",
+	--		},
+	--	},
+	--	---@type YaziConfig
+	--	opts = {
+	--		open_for_directories = false,
+	--	},
+	--},
 	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -528,8 +595,46 @@ require("lazy").setup({
 	--	},
 	--	config = function()
 	--		require("startup").setup({
-	--			--section_1 = <section> -- for the structure of a section see below
-	--			--section_2 = <section> -- as much sections as you like
+	--			-- for the structure of a section see below
+	--			section_1 = {
+	--				type = "text", -- can be mapping or oldfiles
+	--				oldfiles_directory = false, -- if the oldfiles of the current directory should be displayed
+	--				align = "center", -- "center", "left" or "right"
+	--				fold_section = false, -- whether to fold or not
+	--				title = "title", -- title for the folded section
+	--				-- if < 1 fraction of screen width
+	--				-- if > 1 numbers of column
+	--				margin = 2, -- the margin for left or right alignment
+	--				-- type of content depends on `type`
+	--				-- "text" -> a table with string or a function that requires a function that returns a table of strings
+	--				-- "mapping" -> a table with tables in the format:
+	--				-- {
+	--				--   {<displayed_command_name>, <command>, <mapping>}
+	--				--   {<displayed_command_name>, <command>, <mapping>}
+	--				-- }
+	--				-- "oldfiles" -> ""
+	--				content = function()
+	--					local idx = math.random(1, #ANIME)
+	--					local info = ANIME[idx]
+	--					THEPATH = os.getenv("HOME") .. "/.config/nvim/plugins/"
+	--					--local out = os.execute("cat " .. THEPATH .. info[1])
+	--					local handle = io.popen("cat " .. THEPATH .. info[1])
+	--					if not handle then
+	--						return {}
+	--					end
+	--					local lines = {}
+	--					for line in handle:lines() do
+	--						table.insert(lines, line))
+	--					end
+
+	--					--local result = handle:read("*a")
+	--					handle:close()
+	--					return lines
+	--				end,
+	--				highlight = "String", -- highlight group in which the section text should be highlighted
+	--				default_color = "#FF0000", -- a hex color that gets used if you don't specify `highlight`
+	--				--		oldfiles_amount = 5, -- the amount of oldfiles to be displayed
+	--			},
 	--			options = {
 	--				mapping_keys = true, -- display mapping (e.g. <leader>ff)
 
@@ -556,7 +661,7 @@ require("lazy").setup({
 	--				folded_section = "#56b6c2", -- the color of folded sections
 	--				-- this can also be changed with the `StartupFoldedSection` highlight group
 	--			},
-	--			parts = { "section_1", "section_2" }, -- all sections in order
+	--			parts = { "section_1" }, --, "section_2" }, -- all sections in order
 	--		})
 	--	end,
 	--},
@@ -1454,3 +1559,5 @@ dofile(vim.g.base46_cache .. "statusline")
 vim.keymap.set("n", "<leader>ft", function()
 	require("nvchad.themes").open()
 end, {})
+require("nvconfig").base46.theme = "kanagawa"
+require("base46").load_all_highlights()
