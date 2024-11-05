@@ -1,6 +1,6 @@
 setl shiftwidth=4
 setl expandtab
-setl colorcolumn=80
+setl colorcolumn=0
 
 " for vim-godot plugin
 "setl foldmethod=expr
