@@ -75,7 +75,8 @@ vim.opt.termguicolors = true
 vim.opt.hlsearch = true
 
 -- Remap ; to : to make commands easier
-vim.keymap.set("n", ";", ":")
+--vim.keymap.set("n", ";", ":")
+--Disabled because it stopped going to the next occurance of a search with f
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
