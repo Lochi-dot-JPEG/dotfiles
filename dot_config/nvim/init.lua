@@ -795,6 +795,7 @@ require("lazy").setup({
 				"lua",
 				"luadoc",
 				"markdown",
+				"markdown_inline",
 				"vim",
 				"vimdoc",
 				"gdscript",
