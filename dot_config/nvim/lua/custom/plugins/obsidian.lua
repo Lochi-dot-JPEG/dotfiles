@@ -13,12 +13,12 @@ return {
 	--   "BufNewFile path/to/my-vault/*.md",
 	-- },keys = {
 	keys = {
-		--{ "<leader>so", "<cmd>ObsidianSearch<cr>", desc = "[S]earch [O]bsidian" },
-		{ "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "[S]earch [O]bsidian" },
+		{ "<leader>og", "<cmd>ObsidianSearch<cr>", desc = "[O]bsidian [G]rep" },
 		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[O]bsidian [N]ew" },
-		{ "<leader>otd", "<cmd>ObsidianToday<cr>", desc = "[O]bsidian [T]oday" },
-		{ "<leader>otm", "<cmd>ObsidianTomorrow<cr>", desc = "[O]bsidian [T]oday" },
-		{ "<leader>od", "<cmd>ObsidianDailies<cr>", desc = "[O]bsidian [D]ailies" },
+		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[O]bsidian [T]emplate" },
+		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[O]bsidian [D]ailies [T]oday" },
+		{ "<leader>oDt", "<cmd>ObsidianTomorrow<cr>", desc = "[O]bsidian [D]ailies to[M]morow" },
+		{ "<leader>oDs", "<cmd>ObsidianDailies<cr>", desc = "[O]bsidian [D]ailies [S]earch" },
 		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen [O]bsidian" },
 		{
 			"<leader>so",
@@ -35,7 +35,6 @@ return {
 		-- see below for full list of optional dependencies 👇
 	},
 	opts = {
-
 		-- A list of workspace names, paths, and configuration overrides.
 		-- If you use the Obsidian app, the 'path' of a workspace should generally be
 		-- your vault root (where the `.obsidian` folder is located).
@@ -69,7 +68,7 @@ return {
 			-- Optional, default tags to add to each new daily note created.
 			default_tags = { "daily-notes" },
 			-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-			template = nil,
+			template = "daily.md",
 		},
 
 		-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -187,7 +186,8 @@ return {
 		templates = {
 			folder = "templates",
 			date_format = "%Y-%m-%d",
-			time_format = "%H:%M",
+			-- e.g 08:45 pm
+			time_format = "%I:%M %p",
 			-- A map for custom variables, the key should be the variable and the value a function
 			substitutions = {},
 		},
@@ -197,8 +197,8 @@ return {
 		---@param url string
 		follow_url_func = function(url)
 			-- Open the URL in the default web browser.
-			vim.fn.jobstart({ "open", url }) -- Mac OS
-			-- vim.fn.jobstart({"xdg-open", url})  -- linux
+			--vim.fn.jobstart({ "open", url }) -- Mac OS
+			vim.fn.jobstart({ "xdg-open", url }) -- linux
 			-- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
 			-- vim.ui.open(url) -- need Neovim 0.10.0+
 		end,
