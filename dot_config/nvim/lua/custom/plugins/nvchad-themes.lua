@@ -20,6 +20,12 @@ return {
 			require("base46").load_all_highlights()
 		end,
 	},
-
+	-- Lua (chameleon.lua)
 	"nvchad/volt", -- optional, needed for theme switcher
+	{
+		"shaun-mathew/Chameleon.nvim",
+		config = function()
+			require("chameleon").setup()
+		end,
+	},
 }
