@@ -1,15 +1,18 @@
+# Dotfiles
+
 ![alt text](https://github.com/Lochi-dot-JPEG/dotfiles/blob/main/rice.png?raw=true)
 
-**Catppuccin themed dotfiles for**
-- i3wm / dwm, with polybar and keybinds for 40% keyboards
-- kitty terminal
-- neovim
+## Catppuccin themed dotfiles for
 
-**BONUS**
-- fastfetch with blahaj ascii art
+- AwesomeWM, with keybinds for 40% keyboards
+- Kitty terminal
+- Neovim config (with ascii evangelion elevator start screen)
 
-**Installation**
-1. Clone repo
+## **BONUS**
+
+- Fastfetch with blahaj ascii art
+
+## **Installation**
+
+1. Clone repo into chezmoi repo
 2. chezmoi apply
-3. Copy dwm.desktop to /usr/share/xsessions/dwm.desktop
-
