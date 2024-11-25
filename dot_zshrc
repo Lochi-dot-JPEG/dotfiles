@@ -38,6 +38,7 @@ alias blahajfetch="fastfetch --logo blahaj"
 PS1='[\u@\h \W]\$ '
 alias vim="nvim"
 alias vi="nvim"
+alias chz="chezmoi"
 alias oo="cd ~/vaults/brain/"
 alias sp="spotify_player"
 
