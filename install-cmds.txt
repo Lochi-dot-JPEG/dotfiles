@@ -1,0 +1,2 @@
+yay -Sy bibata-cursor-theme-bin aseprite betterdiscord-installer-bin activitywatch-bin
+pacman -Sy neovim awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols obsidian chezmoi lazygit base-devel lxappearance feh flameshot xfce4-power-manager variety picom

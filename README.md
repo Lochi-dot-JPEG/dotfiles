@@ -14,5 +14,6 @@
 
 ## **Installation**
 
-1. Clone repo into chezmoi repo
-2. chezmoi apply
+1. Run all commands in install-cmds.txt
+2. Clone repo into chezmoi repo
+3. chezmoi apply
