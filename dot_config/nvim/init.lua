@@ -8,6 +8,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.tabstop = 4
 -- Enable mouse mode
 vim.opt.mouse = "a"
 
@@ -245,6 +246,7 @@ require("lazy").setup({
 						},
 						--i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 					},
+					file_ignore_patterns = { "%.uid" },
 				},
 				-- pickers = {}
 				extensions = {
@@ -757,7 +759,9 @@ require("lazy").setup({
 		opts = {
 			ensure_installed = {
 				"bash",
+				"rust",
 				"c",
+				"css",
 				"html",
 				"lua",
 				"luadoc",

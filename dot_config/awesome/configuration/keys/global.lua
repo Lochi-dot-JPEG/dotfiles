@@ -71,11 +71,14 @@ local globalKeys = awful.util.table.join(
 		awful.util.spawn_with_shell(apps.default.region_screenshot)
 	end, { description = "Mark an area and screenshot it to your clipboard", group = "screenshots (clipboard)" }),
 	awful.key({ modkey }, "c", function()
-		awful.util.spawn(apps.default.editor)
+		awful.util.spawn_with_shell(apps.default.editor)
 	end, { description = "Open a text/code editor", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
 		awful.util.spawn(apps.default.browser)
 	end, { description = "Open a browser", group = "launcher" }),
+	awful.key({ modkey }, "r", function()
+		awful.util.spawn_with_shell(apps.default.game_engine)
+	end, { description = "Open a game engine", group = "launcher" }),
 	-- Standard program
 	awful.key({ modkey }, "e", function()
 		awful.spawn(apps.default.terminal)
@@ -187,12 +190,12 @@ local globalKeys = awful.util.table.join(
 		{ description = "move window to next screen", group = "client" }
 	),
 	-- Open default program for tag
-	awful.key({ modkey }, "t", function()
-		awful.spawn(awful.screen.focused().selected_tag.defaultApp, {
-			tag = _G.mouse.screen.selected_tag,
-			placement = awful.placement.bottom_right,
-		})
-	end, { description = "Open default program for tag/workspace", group = "tag" }),
+	--awful.key({ modkey }, "t", function()
+	--awful.spawn(awful.screen.focused().selected_tag.defaultApp, {
+	--tag = _G.mouse.screen.selected_tag,
+	--placement = awful.placement.bottom_right,
+	--})
+	--end, { description = "Open default program for tag/workspace", group = "tag" }),
 	-- Custom hotkeys
 	-- vfio integration
 	awful.key({ "Control", altkey }, "space", function()

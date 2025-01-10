@@ -21,8 +21,9 @@ return {
 		screenshot = "flameshot screen -p ~/Pictures",
 		region_screenshot = "flameshot gui -p ~/Pictures",
 		delayed_screenshot = "flameshot screen -p ~/Pictures -d 5000",
-		browser = "brave",
-		editor = "kitty", -- gui text editor
+		browser = "librewolf",
+		game_engine = "~/Scripts/open_game_engine.sh",
+		editor = "kitty nvim", -- gui text editor
 		social = "discord",
 		game = rofi_command,
 		files = "thunar",
