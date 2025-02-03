@@ -52,25 +52,26 @@ local globalKeys = awful.util.table.join(
 		end
 	end, { description = "Switch to previous window", group = "client" }),
 	-- Programms
-	awful.key({ modkey }, "L", function()
+	--
+	awful.key({ modkey, "Shift" }, "l", function()
 		awful.spawn(apps.default.lock)
 	end, { description = "Lock the screen", group = "awesome" }),
-	awful.key({ modkey }, "Print", function()
-		awful.util.spawn_with_shell(apps.default.delayed_screenshot)
-	end, {
-		description = "Mark an area and screenshot it 10 seconds later (clipboard)",
-		group = "screenshots (clipboard)",
-	}),
+
+	-- Screenshots
+
 	awful.key({ modkey }, "p", function()
 		awful.util.spawn_with_shell(apps.default.screenshot)
 	end, {
 		description = "Take a screenshot of your active monitor and copy it to clipboard",
 		group = "screenshots (clipboard)",
 	}),
+
 	awful.key({ altkey, "Shift" }, "p", function()
 		awful.util.spawn_with_shell(apps.default.region_screenshot)
 	end, { description = "Mark an area and screenshot it to your clipboard", group = "screenshots (clipboard)" }),
-	awful.key({ modkey }, "c", function()
+
+	-- Apps
+	awful.key({ modkey }, "v", function()
 		awful.util.spawn_with_shell(apps.default.editor)
 	end, { description = "Open a text/code editor", group = "launcher" }),
 	awful.key({ modkey }, "w", function()
@@ -82,6 +83,9 @@ local globalKeys = awful.util.table.join(
 	-- Standard program
 	awful.key({ modkey }, "e", function()
 		awful.spawn(apps.default.terminal)
+	end, { description = "Open a terminal", group = "launcher" }),
+	awful.key({ modkey }, "z", function()
+		awful.spawn(apps.default.social)
 	end, { description = "Open a terminal", group = "launcher" }),
 	awful.key({ modkey, "Shift" }, "r", _G.awesome.restart, { description = "reload awesome", group = "awesome" }),
 	--awful.key({ modkey, "Control" }, "q", _G.awesome.quit, { description = "quit awesome", group = "awesome" }),
@@ -112,8 +116,8 @@ local globalKeys = awful.util.table.join(
 	awful.key({ modkey }, "space", function()
 		awful.layout.inc(1)
 	end, { description = "Select next", group = "layout" }),
-	awful.key({ modkey, "Shift" }, "space", function()
-		awful.layout.inc(-1)
+	awful.key({ modkey }, "y", function()
+		awful.client.floating.toggle()
 	end, { description = "Select previous", group = "layout" }),
 	awful.key({ modkey, "Control" }, "n", function()
 		local c = awful.client.restore()
@@ -123,10 +127,7 @@ local globalKeys = awful.util.table.join(
 			c:raise()
 		end
 	end, { description = "restore minimized", group = "client" }),
-	-- Dropdown application
-	--awful.key({ modkey }, "z", function()
-	--	_G.toggle_quake()
-	--end, { description = "dropdown application", group = "launcher" }),
+
 	-- Widgets popups
 	--[[awful.key(
     {altkey},
@@ -197,10 +198,6 @@ local globalKeys = awful.util.table.join(
 	--})
 	--end, { description = "Open default program for tag/workspace", group = "tag" }),
 	-- Custom hotkeys
-	-- vfio integration
-	awful.key({ "Control", altkey }, "space", function()
-		awful.util.spawn_with_shell("vm-attach attach")
-	end),
 	-- Lutris hotkey
 	--awful.key({ modkey }, "g", function()
 	--	awful.util.spawn_with_shell("lutris")
@@ -209,14 +206,10 @@ local globalKeys = awful.util.table.join(
 	awful.key({ modkey }, "m", function()
 		awful.util.spawn_with_shell("mate-system-monitor")
 	end),
-	-- Kill VLC
-	awful.key({ modkey }, "v", function()
-		awful.util.spawn_with_shell("killall -9 vlc")
-	end),
 	-- File Manager
-	--awful.key({ modkey }, "e", function()
-	--awful.util.spawn(apps.default.files)
-	--end, { description = "filebrowser", group = "hotkeys" }),
+	awful.key({ modkey }, "t", function()
+		awful.util.spawn(apps.default.files)
+	end, { description = "filebrowser", group = "hotkeys" }),
 	-- Emoji Picker
 	awful.key({ modkey }, "a", function()
 		awful.util.spawn_with_shell("ibus emoji")

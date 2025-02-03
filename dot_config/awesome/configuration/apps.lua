@@ -16,18 +16,15 @@ return {
 	default = {
 		terminal = "kitty",
 		rofi = rofi_command,
-		lock = "i3lock-fancy",
+		lock = "i3lock-fancy -f Comic-Sans-MS",
 		quake = "kitty",
 		screenshot = "flameshot screen -p ~/Pictures",
-		region_screenshot = "flameshot gui -p ~/Pictures",
-		delayed_screenshot = "flameshot screen -p ~/Pictures -d 5000",
+		region_screenshot = "flameshot gui",
 		browser = "librewolf",
 		game_engine = "~/Scripts/open_game_engine.sh",
-		editor = "kitty nvim", -- gui text editor
+		editor = "kitty nvim",
 		social = "discord",
-		game = rofi_command,
 		files = "thunar",
-		music = rofi_command,
 	},
 	-- List of apps to start once on start-up
 	run_on_start_up = {
@@ -41,12 +38,12 @@ return {
 		"xfce4-power-manager", -- Power manager
 		"xrandr --output DP-0 --mode 1920x1080 --rate 165.00",
 		"flameshot",
-		"synology-drive -minimized",
 		"steam -silent",
 		--"feh --randomize --bg-fill ~/.wallpapers/*",
 		"feh ~/Pictures/Wallpapers/* --recursive --randomize --bg-fill",
 		"/usr/bin/variety",
 		"xset r rate 200 30",
+		"mpd -v",
 		-- Add applications that need to be killed between reloads
 		-- to avoid multipled instances, inside the awspawn script
 		"~/.config/awesome/configuration/awspawn", -- Spawn "dirty" apps that can linger between sessions

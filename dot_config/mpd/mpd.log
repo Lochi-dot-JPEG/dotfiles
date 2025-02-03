@@ -1,0 +1,521 @@
+Feb 02 13:13 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 13:13 : update: spawned thread for update job id 1
+Feb 02 13:13 : state_file: Loading state file /home/lochie/.config/mpd/mpdstate
+Feb 02 13:13 : update: starting
+Feb 02 13:13 : exception: Failed to open '/home/lochie/.config/mpd/mpdstate': No such file or directory
+Feb 02 13:13 : inotify: initializing inotify
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/01 - Aesop Rock - Hello From The Spirit World.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/01 - Aesop Rock - Hello From The Spirit World.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/02 - Aesop Rock - The Gates.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/02 - Aesop Rock - The Gates.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/03 - Aesop Rock - Button Masher.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/03 - Aesop Rock - Button Masher.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/04 - Aesop Rock - Dog At The Door.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/04 - Aesop Rock - Dog At The Door.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/05 - Aesop Rock - Gauze.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/05 - Aesop Rock - Gauze.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/06 - Aesop Rock - Pizza Alley.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/06 - Aesop Rock - Pizza Alley.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/07 - Aesop Rock - Crystal Sword.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/07 - Aesop Rock - Crystal Sword.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/08 - Aesop Rock - Boot Soup.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/08 - Aesop Rock - Boot Soup.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/09 - Aesop Rock - Coveralls.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/09 - Aesop Rock - Coveralls.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/10 - Aesop Rock - Jumping Coffin.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/10 - Aesop Rock - Jumping Coffin.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/11 - Aesop Rock - Holy Waterfall.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/11 - Aesop Rock - Holy Waterfall.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/12 - Aesop Rock - Flies.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/12 - Aesop Rock - Flies.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/13 - Aesop Rock - Salt.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/13 - Aesop Rock - Salt.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/14 - Aesop Rock - Sleeping Car.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/14 - Aesop Rock - Sleeping Car.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/15 - Aesop Rock - 1 to 10.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/15 - Aesop Rock - 1 to 10.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/16 - Aesop Rock - Attaboy.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/16 - Aesop Rock - Attaboy.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/17 - Aesop Rock - Kodokushi.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/17 - Aesop Rock - Kodokushi.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/18 - Aesop Rock - Fixed and Dilated.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/18 - Aesop Rock - Fixed and Dilated.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/19 - Aesop Rock - Side Quest.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/19 - Aesop Rock - Side Quest.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/20 - Aesop Rock - Marble Cake.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/20 - Aesop Rock - Marble Cake.flac
+Feb 02 13:13 : update: reading Aesop Rock - Spirit World Field Guide/21 - Aesop Rock - The Four Winds.flac
+Feb 02 13:13 : update: added Aesop Rock - Spirit World Field Guide/21 - Aesop Rock - The Four Winds.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/01 - Aesop Rock - Mystery Fish.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/01 - Aesop Rock - Mystery Fish.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/02 - Aesop Rock - Rings.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/02 - Aesop Rock - Rings.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/03 - Aesop Rock - Lotta Years.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/03 - Aesop Rock - Lotta Years.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/04 - Aesop Rock - Dorks.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/04 - Aesop Rock - Dorks.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/05 - Aesop Rock - Rabies.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/05 - Aesop Rock - Rabies.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/06 - Aesop Rock - Supercell.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/06 - Aesop Rock - Supercell.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/07 - Aesop Rock - Blood Sandwich.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/07 - Aesop Rock - Blood Sandwich.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/08 - Aesop Rock - Get Out of the Car.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/08 - Aesop Rock - Get Out of the Car.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/09 - Aesop Rock - Shrunk.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/09 - Aesop Rock - Shrunk.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/10 - Aesop Rock - Kirby.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/10 - Aesop Rock - Kirby.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/11 - Aesop Rock - TUFF.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/11 - Aesop Rock - TUFF.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/12 - Aesop Rock - Lazy Eye.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/12 - Aesop Rock - Lazy Eye.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/13 - Aesop Rock - Defender.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/13 - Aesop Rock - Defender.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/14 - Aesop Rock - Water Tower.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/14 - Aesop Rock - Water Tower.flac
+Feb 02 13:13 : update: reading Aesop Rock - The Impossible Kid/15 - Aesop Rock - Molecules.flac
+Feb 02 13:13 : update: added Aesop Rock - The Impossible Kid/15 - Aesop Rock - Molecules.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/09 - Charli xcx - So i featuring a. g. cook.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/09 - Charli xcx - So i featuring a. g. cook.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/01 - Charli xcx - 360 featuring robyn & yung lean.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/01 - Charli xcx - 360 featuring robyn & yung lean.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/02 - Charli xcx - Club classics featuring bb trickz.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/02 - Charli xcx - Club classics featuring bb trickz.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/03 - Charli xcx - Sympathy is a knife featuring ariana grande.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/03 - Charli xcx - Sympathy is a knife featuring ariana grande.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/04 - Charli xcx - I might say something stupid featuring the 1975 & jon hopkins.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/04 - Charli xcx - I might say something stupid featuring the 1975 & jon hopkins.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/05 - Charli xcx - Talk talk featuring troye sivan.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/05 - Charli xcx - Talk talk featuring troye sivan.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/06 - Charli xcx - Von dutch a. g. cook remix featuring addison rae.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/06 - Charli xcx - Von dutch a. g. cook remix featuring addison rae.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/07 - Charli xcx - Everything is romantic featuring caroline polachek.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/07 - Charli xcx - Everything is romantic featuring caroline polachek.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/08 - Charli xcx - Rewind featuring bladee.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/08 - Charli xcx - Rewind featuring bladee.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/10 - Charli xcx - Girl, so confusing featuring lorde.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/10 - Charli xcx - Girl, so confusing featuring lorde.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/11 - Charli xcx - Apple featuring the japanese house.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/11 - Charli xcx - Apple featuring the japanese house.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/12 - Charli xcx - B2b featuring tinashe.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/12 - Charli xcx - B2b featuring tinashe.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/13 - Charli xcx - Mean girls featuring julian casablancas.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/13 - Charli xcx - Mean girls featuring julian casablancas.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/14 - Charli xcx - I think about it all the time featuring bon iver.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/14 - Charli xcx - I think about it all the time featuring bon iver.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/15 - Charli xcx - 365 featuring shygirl.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/15 - Charli xcx - 365 featuring shygirl.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 1)/16 - Charli xcx - Guess featuring billie eilish.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 1)/16 - Charli xcx - Guess featuring billie eilish.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/01 - Charli xcx - 360.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/01 - Charli xcx - 360.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/02 - Charli xcx - Club classics.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/02 - Charli xcx - Club classics.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/03 - Charli xcx - Sympathy is a knife.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/03 - Charli xcx - Sympathy is a knife.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/04 - Charli xcx - I might say something stupid.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/04 - Charli xcx - I might say something stupid.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/05 - Charli xcx - Talk talk.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/05 - Charli xcx - Talk talk.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/06 - Charli xcx - Von dutch.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/06 - Charli xcx - Von dutch.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/07 - Charli xcx - Everything is romantic.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/07 - Charli xcx - Everything is romantic.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/08 - Charli xcx - Rewind.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/08 - Charli xcx - Rewind.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/09 - Charli xcx - So I.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/09 - Charli xcx - So I.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/10 - Charli xcx - Girl, so confusing.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/10 - Charli xcx - Girl, so confusing.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/11 - Charli xcx - Apple.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/11 - Charli xcx - Apple.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/12 - Charli xcx - B2b.flac
+Feb 02 13:13 : inotify: watching music directory
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/12 - Charli xcx - B2b.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/13 - Charli xcx - Mean girls.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/13 - Charli xcx - Mean girls.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/14 - Charli xcx - I think about it all the time.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/14 - Charli xcx - I think about it all the time.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/15 - Charli xcx - 365.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/15 - Charli xcx - 365.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/16 - Charli xcx - Hello goodbye.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/16 - Charli xcx - Hello goodbye.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/17 - Charli xcx - Guess.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/17 - Charli xcx - Guess.flac
+Feb 02 13:13 : update: reading Charli xcx - Brat and it's completely different but also still brat (Disc 2)/18 - Charli xcx - Spring breakers.flac
+Feb 02 13:13 : update: added Charli xcx - Brat and it's completely different but also still brat (Disc 2)/18 - Charli xcx - Spring breakers.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/01 - Danny Brown - Downward Spiral.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/01 - Danny Brown - Downward Spiral.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/02 - Danny Brown - Tell Me What I Don't Know.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/02 - Danny Brown - Tell Me What I Don't Know.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/03 - Danny Brown ft. Petite Noir - Rolling Stone.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/03 - Danny Brown ft. Petite Noir - Rolling Stone.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/04 - Danny Brown ft. Kendrick Lamar, Ab-Soul & Earl Sweatshirt - Really Doe.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/04 - Danny Brown ft. Kendrick Lamar, Ab-Soul & Earl Sweatshirt - Really Doe.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/05 - Danny Brown - Lost.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/05 - Danny Brown - Lost.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/06 - Danny Brown - Ain't It Funny.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/06 - Danny Brown - Ain't It Funny.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/07 - Danny Brown - Goldust.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/07 - Danny Brown - Goldust.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/08 - Danny Brown - White Lines.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/08 - Danny Brown - White Lines.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/09 - Danny Brown - Pneumonia.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/09 - Danny Brown - Pneumonia.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/10 - Danny Brown - Dance in the Water.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/10 - Danny Brown - Dance in the Water.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/11 - Danny Brown ft. Kelela - From the Ground.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/11 - Danny Brown ft. Kelela - From the Ground.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/12 - Danny Brown - When It Rain.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/12 - Danny Brown - When It Rain.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/13 - Danny Brown - Today.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/13 - Danny Brown - Today.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/14 - Danny Brown ft. B-Real - Get Hi.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/14 - Danny Brown ft. B-Real - Get Hi.flac
+Feb 02 13:13 : update: reading Danny Brown - Atrocity Exhibition/15 - Danny Brown - Hell for It.flac
+Feb 02 13:13 : update: added Danny Brown - Atrocity Exhibition/15 - Danny Brown - Hell for It.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/01 - Frank Sinatra - Theme From New York New York.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/01 - Frank Sinatra - Theme From New York New York.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/02 - Frank Sinatra - I Get A Kick Out Of You.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/02 - Frank Sinatra - I Get A Kick Out Of You.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/03 - Frank Sinatra - Something Stupid (Duet with Nancy Sinatra).flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/03 - Frank Sinatra - Something Stupid (Duet with Nancy Sinatra).flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/04 - Frank Sinatra - Moon River.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/04 - Frank Sinatra - Moon River.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/05 - Frank Sinatra - What Now My Love.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/05 - Frank Sinatra - What Now My Love.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/06 - Frank Sinatra - Summer Wind.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/06 - Frank Sinatra - Summer Wind.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/07 - Frank Sinatra - Mrs. Robinson.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/07 - Frank Sinatra - Mrs. Robinson.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/08 - Frank Sinatra - My Way.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/08 - Frank Sinatra - My Way.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/09 - Frank Sinatra - Strangers In The Night.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/09 - Frank Sinatra - Strangers In The Night.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/10 - Frank Sinatra - For Once In My Life.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/10 - Frank Sinatra - For Once In My Life.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/11 - Frank Sinatra - Yesterday.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/11 - Frank Sinatra - Yesterday.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/12 - Frank Sinatra - That's Life.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/12 - Frank Sinatra - That's Life.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/13 - Frank Sinatra - The Girl From Ipanema.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/13 - Frank Sinatra - The Girl From Ipanema.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/14 - Frank Sinatra - The Lady Is A Tramp.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/14 - Frank Sinatra - The Lady Is A Tramp.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/15 - Frank Sinatra - Bad, Bad Leroy Brown.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/15 - Frank Sinatra - Bad, Bad Leroy Brown.flac
+Feb 02 13:13 : update: reading Frank Sinatra - New York New York/16 - Frank Sinatra - Ol' Man River.flac
+Feb 02 13:13 : update: added Frank Sinatra - New York New York/16 - Frank Sinatra - Ol' Man River.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/01 - Jamiroquai - Feel So Good.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/01 - Jamiroquai - Feel So Good.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/02 - Jamiroquai - Little L.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/02 - Jamiroquai - Little L.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/03 - Jamiroquai - You Give Me Something.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/03 - Jamiroquai - You Give Me Something.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/04 - Jamiroquai - Corner of the Earth.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/04 - Jamiroquai - Corner of the Earth.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/05 - Jamiroquai - Love Foolosophy.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/05 - Jamiroquai - Love Foolosophy.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/06 - Jamiroquai - Stop Don't Panic.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/06 - Jamiroquai - Stop Don't Panic.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/07 - Jamiroquai - Black Crow.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/07 - Jamiroquai - Black Crow.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/08 - Jamiroquai - Main Vein.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/08 - Jamiroquai - Main Vein.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/09 - Jamiroquai - Twenty Zero One.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/09 - Jamiroquai - Twenty Zero One.flac
+Feb 02 13:13 : update: reading Jamiroquai - A Funk Odyssey/10 - Jamiroquai - Picture of My Life.flac
+Feb 02 13:13 : update: added Jamiroquai - A Funk Odyssey/10 - Jamiroquai - Picture of My Life.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/11 - Kanye West - Addiction.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/11 - Kanye West - Addiction.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/01 - Kanye West - Wake Up Mr West.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/01 - Kanye West - Wake Up Mr West.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/02 - Kanye West featuring Adam Levine of Maroon 5 - Heard 'Em Say.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/02 - Kanye West featuring Adam Levine of Maroon 5 - Heard 'Em Say.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/03 - Kanye West featuring Lupe Fiasco - Touch The Sky.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/03 - Kanye West featuring Lupe Fiasco - Touch The Sky.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/04 - Kanye West featuring Jamie Foxx - Gold Digger.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/04 - Kanye West featuring Jamie Foxx - Gold Digger.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/05 - Kanye West - Can't Afford No Gas (Skit).flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/05 - Kanye West - Can't Afford No Gas (Skit).flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/06 - Kanye West featuring Paul Wall & GLC - Drive Slow.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/06 - Kanye West featuring Paul Wall & GLC - Drive Slow.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/07 - Kanye West featuring Common - My Way Home.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/07 - Kanye West featuring Common - My Way Home.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/08 - Kanye West featuring Game - Crack Music.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/08 - Kanye West featuring Game - Crack Music.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/09 - Kanye West - Roses.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/09 - Kanye West - Roses.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/10 - Kanye West featuring Brandy - Bring Me Down.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/10 - Kanye West featuring Brandy - Bring Me Down.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/12 - Kanye West - We Broke (Skit).flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/12 - Kanye West - We Broke (Skit).flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/13 - Kanye West featuring Jay-Z - Diamonds From Sierra Leone (Remix).flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/13 - Kanye West featuring Jay-Z - Diamonds From Sierra Leone (Remix).flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/14 - Kanye West featuring Nas & Really Doe - We Major.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/14 - Kanye West featuring Nas & Really Doe - We Major.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/15 - Kanye West - Years Ago (Skit).flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/15 - Kanye West - Years Ago (Skit).flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/16 - Kanye West - Hey Mama.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/16 - Kanye West - Hey Mama.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/17 - Kanye West - Celebration.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/17 - Kanye West - Celebration.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/18 - Kanye West - Imposter (Skit).flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/18 - Kanye West - Imposter (Skit).flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/19 - Kanye West featuring Consequence & Cam'Ron - Gone.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/19 - Kanye West featuring Consequence & Cam'Ron - Gone.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/20 - Kanye West - Diamonds From Sierra Leone.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/20 - Kanye West - Diamonds From Sierra Leone.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/21 - Kanye West featuring Talib Kweli, Q-Tip, Common & Rhymefest - We Can Make It Better.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/21 - Kanye West featuring Talib Kweli, Q-Tip, Common & Rhymefest - We Can Make It Better.flac
+Feb 02 13:13 : update: reading Kanye West - Late Registration/22 - Kanye West - Late.flac
+Feb 02 13:13 : update: added Kanye West - Late Registration/22 - Kanye West - Late.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/01 - Lauryn Hill - Intro.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/01 - Lauryn Hill - Intro.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/02 - Lauryn Hill - Lost ones.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/02 - Lauryn Hill - Lost ones.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/03 - Lauryn Hill - Ex-Factor.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/03 - Lauryn Hill - Ex-Factor.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/04 - Lauryn Hill - To zion.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/04 - Lauryn Hill - To zion.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/05 - Lauryn Hill - Doo wop (That thing).flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/05 - Lauryn Hill - Doo wop (That thing).flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/06 - Lauryn Hill - Superstar.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/06 - Lauryn Hill - Superstar.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/07 - Lauryn Hill - Final hour.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/07 - Lauryn Hill - Final hour.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/08 - Lauryn Hill - When it hurts so bad.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/08 - Lauryn Hill - When it hurts so bad.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/09 - Lauryn Hill - I used to love him.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/09 - Lauryn Hill - I used to love him.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/10 - Lauryn Hill - Forgive them father.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/10 - Lauryn Hill - Forgive them father.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/11 - Lauryn Hill - Every ghetto, every city.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/11 - Lauryn Hill - Every ghetto, every city.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/12 - Lauryn Hill - Nothing even matters.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/12 - Lauryn Hill - Nothing even matters.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/13 - Lauryn Hill - Everything is everything.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/13 - Lauryn Hill - Everything is everything.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/14 - Lauryn Hill - The miseducation of Lauryn Hill.flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/14 - Lauryn Hill - The miseducation of Lauryn Hill.flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/15 - Lauryn Hill - Can't take my eyes off of you (Bonus Track).flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/15 - Lauryn Hill - Can't take my eyes off of you (Bonus Track).flac
+Feb 02 13:13 : update: reading Lauryn Hill - The miseducation of Lauryn Hill/16 - Lauryn Hill - Tell him (Bonus Track).flac
+Feb 02 13:13 : update: added Lauryn Hill - The miseducation of Lauryn Hill/16 - Lauryn Hill - Tell him (Bonus Track).flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/01 - MF Doom - Beef Rapp.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/01 - MF Doom - Beef Rapp.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/02 - MF Doom - Hoe Cakes.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/02 - MF Doom - Hoe Cakes.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/03 - MF Doom - Potholderz ft. Count Bass D.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/03 - MF Doom - Potholderz ft. Count Bass D.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/04 - MF Doom - One Beer.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/04 - MF Doom - One Beer.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/05 - MF Doom - Deep Fried Frenz.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/05 - MF Doom - Deep Fried Frenz.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/06 - MF Doom - Poo-Putt Platter.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/06 - MF Doom - Poo-Putt Platter.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/07 - MF Doom - Fillet-O-Rapper.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/07 - MF Doom - Fillet-O-Rapper.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/08 - MF Doom - Gumbo.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/08 - MF Doom - Gumbo.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/09 - MF Doom - Fig Leaf Bi-Carbonate.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/09 - MF Doom - Fig Leaf Bi-Carbonate.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/10 - MF Doom - Kon Karne.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/10 - MF Doom - Kon Karne.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/11 - MF Doom - Guinesses ft. Angelika & 4ize.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/11 - MF Doom - Guinesses ft. Angelika & 4ize.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/12 - MF Doom - Kon Queso.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/12 - MF Doom - Kon Queso.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/13 - MF Doom - Rapp Snitch Knishes ft. Mr. Fantastik.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/13 - MF Doom - Rapp Snitch Knishes ft. Mr. Fantastik.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/14 - MF Doom - Vomitspit.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/14 - MF Doom - Vomitspit.flac
+Feb 02 13:13 : update: reading MF Doom - MM.. Food/15 - MF Doom - Kookies.flac
+Feb 02 13:13 : update: added MF Doom - MM.. Food/15 - MF Doom - Kookies.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/01 - MGMT - Loss of Life (Part 2).flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/01 - MGMT - Loss of Life (Part 2).flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/02 - MGMT - Mother Nature.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/02 - MGMT - Mother Nature.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/03 - MGMT - Dancing in Babylon.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/03 - MGMT - Dancing in Babylon.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/04 - MGMT - People in the Streets.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/04 - MGMT - People in the Streets.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/05 - MGMT - Bubblegum Dog.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/05 - MGMT - Bubblegum Dog.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/06 - MGMT - Nothing to Declare.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/06 - MGMT - Nothing to Declare.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/07 - MGMT - Nothing Changes.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/07 - MGMT - Nothing Changes.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/08 - MGMT - Phradie's Song.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/08 - MGMT - Phradie's Song.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/09 - MGMT - I Wish I Was Joking.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/09 - MGMT - I Wish I Was Joking.flac
+Feb 02 13:13 : update: reading MGMT - Loss of Life/10 - MGMT - Loss of Life.flac
+Feb 02 13:13 : update: added MGMT - Loss of Life/10 - MGMT - Loss of Life.flac
+Feb 02 13:13 : update: reading Miles Davis - Kind Of Blue/01 - Miles Davis - So What.flac
+Feb 02 13:13 : update: added Miles Davis - Kind Of Blue/01 - Miles Davis - So What.flac
+Feb 02 13:13 : update: reading Miles Davis - Kind Of Blue/02 - Miles Davis - Freddie Freeloader.flac
+Feb 02 13:13 : update: added Miles Davis - Kind Of Blue/02 - Miles Davis - Freddie Freeloader.flac
+Feb 02 13:13 : update: reading Miles Davis - Kind Of Blue/03 - Miles Davis - Blue In Green.flac
+Feb 02 13:13 : update: added Miles Davis - Kind Of Blue/03 - Miles Davis - Blue In Green.flac
+Feb 02 13:13 : update: reading Miles Davis - Kind Of Blue/04 - Miles Davis - All Blues.flac
+Feb 02 13:13 : update: added Miles Davis - Kind Of Blue/04 - Miles Davis - All Blues.flac
+Feb 02 13:13 : update: reading Miles Davis - Kind Of Blue/05 - Miles Davis - Flamenco Sketches.flac
+Feb 02 13:13 : update: added Miles Davis - Kind Of Blue/05 - Miles Davis - Flamenco Sketches.flac
+Feb 02 13:13 : update: reading Miles Davis - Kind Of Blue/06 - Miles Davis - Flamenco Sketches (Alternate Take).flac
+Feb 02 13:13 : update: added Miles Davis - Kind Of Blue/06 - Miles Davis - Flamenco Sketches (Alternate Take).flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/09 Lucid Rhythms - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/09 Lucid Rhythms - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/01 Urban Fragments - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/01 Urban Fragments - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/02 Turn the Page - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/02 Turn the Page - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/03 On Your Way - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/03 On Your Way - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/04 Garage Talk - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/04 Garage Talk - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/05 Spiral Ahead - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/05 Spiral Ahead - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/06 Pearl Blue Soul - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/06 Pearl Blue Soul - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/07 Naked Glow - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/07 Naked Glow - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/08 Your Vibe - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/08 Your Vibe - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/10 Thru - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/10 Thru - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/11 Silhouette Dance - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/11 Silhouette Dance - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/12 Burnin' Rubber - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/12 Burnin' Rubber - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/13 Revlimit Funk - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/13 Revlimit Funk - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/14 Quiet Curves - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/14 Quiet Curves - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/15 Motor Species - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/15 Motor Species - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/16 The Objective - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/16 The Objective - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/17 Move Me - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/17 Move Me - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/18 The Ride - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/18 The Ride - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/19 Movin' in Circles - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/19 Movin' in Circles - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/20 The Parade - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/20 The Parade - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/21 Epilogue - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/21 Epilogue - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/22 Ridge Racer -one more win- - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/22 Ridge Racer -one more win- - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/23 Ready to Roll! - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/23 Ready to Roll! - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/24 Party's Over - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/24 Party's Over - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Ridge Racer Type 4/25 Eat'em Up! - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: added Ridge Racer Type 4/25 Eat'em Up! - R4 ⧸ Ridge Racer Type 4.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/01 - Tyler, the Creator, DJ DRAMA - SIR BAUDELAIRE.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/01 - Tyler, the Creator, DJ DRAMA - SIR BAUDELAIRE.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/02 - Tyler, the Creator - CORSO.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/02 - Tyler, the Creator - CORSO.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/03 - Tyler, the Creator, 42 DUGG - LEMONHEAD.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/03 - Tyler, the Creator, 42 DUGG - LEMONHEAD.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/04 - Tyler, the Creator, YoungBoy Never Broke Again, Ty Dolla $ign - WUSYANAME.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/04 - Tyler, the Creator, YoungBoy Never Broke Again, Ty Dolla $ign - WUSYANAME.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/05 - Tyler, the Creator - LUMBERJACK.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/05 - Tyler, the Creator - LUMBERJACK.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/06 - Tyler, the Creator, Lil Wayne - HOT WIND BLOWS.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/06 - Tyler, the Creator, Lil Wayne - HOT WIND BLOWS.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/07 - Tyler, the Creator - MASSA.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/07 - Tyler, the Creator - MASSA.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/08 - Tyler, the Creator, Teezo Touchdown - RUNITUP.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/08 - Tyler, the Creator, Teezo Touchdown - RUNITUP.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/09 - Tyler, the Creator, Domo Genesis - MANIFESTO.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/09 - Tyler, the Creator, Domo Genesis - MANIFESTO.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/10 - Tyler, the Creator, Brent Faiyaz, Fana Hues - SWEET  I THOUGHT YOU WANTED TO DANCE.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/10 - Tyler, the Creator, Brent Faiyaz, Fana Hues - SWEET  I THOUGHT YOU WANTED TO DANCE.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/11 - Tyler, the Creator - MOMMA TALK.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/11 - Tyler, the Creator - MOMMA TALK.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/12 - Tyler, the Creator, DAISY WORLD - RISE!.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/12 - Tyler, the Creator, DAISY WORLD - RISE!.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/13 - Tyler, the Creator - BLESSED.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/13 - Tyler, the Creator - BLESSED.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/14 - Tyler, the Creator, Lil Uzi Vert, Pharrell Williams - JUGGERNAUT.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/14 - Tyler, the Creator, Lil Uzi Vert, Pharrell Williams - JUGGERNAUT.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/15 - Tyler, the Creator - WILSHIRE.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/15 - Tyler, the Creator - WILSHIRE.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - CALL ME IF YOU GET LOST/16 - Tyler, the Creator - FISHTAIL.flac
+Feb 02 13:13 : update: added Tyler, the Creator - CALL ME IF YOU GET LOST/16 - Tyler, the Creator - FISHTAIL.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/01 - Tyler, the Creator ft. Rex Orange County - Foreward.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/01 - Tyler, the Creator ft. Rex Orange County - Foreward.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/02 - Tyler, the Creator ft. Frank Ocean - Where This Flower Blooms.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/02 - Tyler, the Creator ft. Frank Ocean - Where This Flower Blooms.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/03 - Tyler, the Creator - Sometimes,,,.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/03 - Tyler, the Creator - Sometimes,,,.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/04 - Tyler, the Creator ft. Kali Uchis - See You Again.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/04 - Tyler, the Creator ft. Kali Uchis - See You Again.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/05 - Tyler, the Creator ft. A$AP Rocky - Who Dat Boy.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/05 - Tyler, the Creator ft. A$AP Rocky - Who Dat Boy.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/06 - Tyler, the Creator ft. Jaden Smith - Pothole.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/06 - Tyler, the Creator ft. Jaden Smith - Pothole.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/07 - Tyler, the Creator ft. Estelle - Garden Shed.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/07 - Tyler, the Creator ft. Estelle - Garden Shed.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/08 - Tyler, the Creator - Tyler, the Creator ft. Rex Orange County & Anna of the North  Boredom.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/08 - Tyler, the Creator - Tyler, the Creator ft. Rex Orange County & Anna of the North  Boredom.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/09 - Tyler, the Creator - I Ain't Got Time!.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/09 - Tyler, the Creator - I Ain't Got Time!.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/10 - Tyler, the Creator ft. Frank Ocean & Steve Lacy - 911 _ Mr Lonely.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/10 - Tyler, the Creator ft. Frank Ocean & Steve Lacy - 911 _ Mr Lonely.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/11 - Tyler, the Creator ft. Lil Wayne - Droppin' Seeds.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/11 - Tyler, the Creator ft. Lil Wayne - Droppin' Seeds.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/12 - Tyler, the Creator - November.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/12 - Tyler, the Creator - November.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/13 - Tyler, the Creator - Glitter.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/13 - Tyler, the Creator - Glitter.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Flower Boy/14 - Tyler, the Creator - Enjoy Right Now, Today.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Flower Boy/14 - Tyler, the Creator - Enjoy Right Now, Today.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/01 - Tyler, the Creator - Igor's Theme.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/01 - Tyler, the Creator - Igor's Theme.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/02 - Tyler, the Creator - Earfquake.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/02 - Tyler, the Creator - Earfquake.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/03 - Tyler, the Creator - I Think.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/03 - Tyler, the Creator - I Think.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/04 - Tyler, the Creator - Boyfriend.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/04 - Tyler, the Creator - Boyfriend.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/05 - Tyler, the Creator - Running Out of Time.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/05 - Tyler, the Creator - Running Out of Time.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/06 - Tyler, the Creator - New Magic Wand.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/06 - Tyler, the Creator - New Magic Wand.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/07 - Tyler, the Creator - A Boy Is a Gun.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/07 - Tyler, the Creator - A Boy Is a Gun.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/08 - Tyler, the Creator - Puppet.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/08 - Tyler, the Creator - Puppet.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/09 - Tyler, the Creator - What's Good.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/09 - Tyler, the Creator - What's Good.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/10 - Tyler, the Creator - Thank You.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/10 - Tyler, the Creator - Thank You.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/11 - Tyler, the Creator - I Don't Love You Anymore.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/11 - Tyler, the Creator - I Don't Love You Anymore.flac
+Feb 02 13:13 : update: reading Tyler, the Creator - Igor/12 - Tyler, the Creator - Are We Still Friends.flac
+Feb 02 13:13 : update: added Tyler, the Creator - Igor/12 - Tyler, the Creator - Are We Still Friends.flac
+Feb 02 13:13 : simple_db: removing empty directories from DB
+Feb 02 13:13 : simple_db: sorting DB
+Feb 02 13:13 : simple_db: writing DB
+Feb 02 13:13 : update: finished
+Feb 02 13:33 : exception: Failed to open '/home/lochie/.config/mpd/mpdstate': No such file or directory
+Feb 02 13:44 : update: spawned thread for update job id 2
+Feb 02 13:44 : inotify: updating 'Ridge Racer Type 4' job=2
+Feb 02 13:44 : update: starting: Ridge Racer Type 4
+Feb 02 13:44 : update: finished: Ridge Racer Type 4
+Feb 02 13:45 : state_file: Saving state file /home/lochie/.config/mpd/mpdstate
+Feb 02 13:45 : state_file: Loading state file /home/lochie/.config/mpd/mpdstate
+Feb 02 13:45 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 13:45 : inotify: initializing inotify
+Feb 02 13:45 : inotify: watching music directory
+Feb 02 13:47 : state_file: Saving state file /home/lochie/.config/mpd/mpdstate
+Feb 02 13:50 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 13:50 : state_file: Loading state file /home/lochie/.config/mpd/mpdstate
+Feb 02 13:50 : inotify: initializing inotify
+Feb 02 13:50 : inotify: watching music directory
+Feb 02 13:53 : state_file: Saving state file /home/lochie/.config/mpd/mpdstate

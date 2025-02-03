@@ -41,6 +41,7 @@ alias vi="nvim"
 alias chz="chezmoi"
 alias oo="cd ~/vaults/brain/"
 alias sp="spotify_player"
+alias music="ncmpcpp"
 
 xset r rate 200 30
 
