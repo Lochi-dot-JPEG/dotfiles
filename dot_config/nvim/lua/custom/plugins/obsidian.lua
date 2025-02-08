@@ -18,7 +18,7 @@ return {
 		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[O]bsidian [T]emplate" },
 		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[O]bsidian [D]ailies [T]oday" },
 		{ "<leader>oDt", "<cmd>ObsidianTomorrow<cr>", desc = "[O]bsidian [D]ailies to[M]morow" },
-		{ "<leader>oDs", "<cmd>ObsidianDailies<cr>", desc = "[O]bsidian [D]ailies [S]earch" },
+		{ "<leader>oDs", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[O]bsidian [D]ailies [S]earch" },
 		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen [O]bsidian" },
 		{
 			"<leader>so",

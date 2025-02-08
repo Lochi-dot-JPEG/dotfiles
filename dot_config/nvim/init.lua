@@ -4,6 +4,8 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
+vim.opt.spelllang = "en_au,en_us,en_gb"
+
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -86,9 +88,6 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 --vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
--- Open todo file
-vim.keymap.set("n", "<leader>t", ":e todo.txt<CR>", { desc = "Open [T]odo.txt" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -175,6 +174,7 @@ require("lazy").setup({
 			require("which-key").add({
 				{ "<leader>c", group = "[C]ode" },
 				{ "<leader>o", group = "[O]bsidian" },
+				{ "<leader>c", group = "[C]onvert" },
 				{ "<leader>d", group = "[D]ocument" },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
@@ -864,7 +864,33 @@ function _lazygit_toggle()
 	lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>h",
+	"<cmd>lua _lazygit_toggle()<CR>",
+	{ desc = "Open Lazygit", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"<leader>ct",
+	":set tabstop=4<cr>:set noexpandtab<cr>:%retab!<cr>",
+	{ desc = "Convert spaces to [T]abs", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"<leader>cT",
+	":set tabstop=8<cr>:set noexpandtab<cr>:%retab!<cr>",
+	{ desc = "Convert 8 spaces to [T]abs", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"<leader>cs",
+	":set noexpandtab!<cr>:%retab!<cr>",
+	{ desc = "Convert tabs to [S]paces", noremap = true, silent = true }
+)
+vim.keymap.set("n", "<leader>ts", function()
+	vim.opt.spell = not (vim.opt.spell:get())
+end, { desc = "[T]oggle [S]pelling", noremap = true, silent = true })
 
 -- put this after lazy setup
 

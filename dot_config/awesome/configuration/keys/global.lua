@@ -66,7 +66,7 @@ local globalKeys = awful.util.table.join(
 		group = "screenshots (clipboard)",
 	}),
 
-	awful.key({ altkey, "Shift" }, "p", function()
+	awful.key({ altkey }, "p", function()
 		awful.util.spawn_with_shell(apps.default.region_screenshot)
 	end, { description = "Mark an area and screenshot it to your clipboard", group = "screenshots (clipboard)" }),
 
@@ -84,7 +84,7 @@ local globalKeys = awful.util.table.join(
 	awful.key({ modkey }, "e", function()
 		awful.spawn(apps.default.terminal)
 	end, { description = "Open a terminal", group = "launcher" }),
-	awful.key({ modkey }, "z", function()
+	awful.key({ modkey }, "x", function()
 		awful.spawn(apps.default.social)
 	end, { description = "Open a terminal", group = "launcher" }),
 	awful.key({ modkey, "Shift" }, "r", _G.awesome.restart, { description = "reload awesome", group = "awesome" }),
