@@ -878,9 +878,15 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>cT",
+	"<leader>cT8",
 	":set tabstop=8<cr>:set noexpandtab<cr>:%retab!<cr>",
 	{ desc = "Convert 8 spaces to [T]abs", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"<leader>cT2",
+	":set tabstop=2<cr>:set noexpandtab<cr>:%retab!<cr>",
+	{ desc = "Convert 2 spaces to [T]abs", noremap = true, silent = true }
 )
 vim.keymap.set(
 	"n",
