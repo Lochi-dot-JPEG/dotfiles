@@ -40,7 +40,7 @@ return {
 		"flameshot",
 		"steam -silent",
 		--"feh --randomize --bg-fill ~/.wallpapers/*",
-		"feh ~/Pictures/Wallpapers/* --recursive --randomize --bg-fill",
+		--"feh ~/Pictures/Wallpapers/* --recursive --randomize --bg-fill",
 		"/usr/bin/variety",
 		"xset r rate 200 30",
 		"mpd -v",
