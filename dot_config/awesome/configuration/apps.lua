@@ -20,7 +20,7 @@ return {
 		quake = "kitty",
 		screenshot = "flameshot screen -p ~/Pictures",
 		region_screenshot = "flameshot gui",
-		browser = "librewolf",
+		browser = "zen-browser",
 		game_engine = "~/Scripts/open_game_engine.sh",
 		editor = "kitty nvim",
 		social = "discord",
