@@ -18,8 +18,8 @@ theme.accent = mat_colors.pink
 -- Background
 theme.background = mat_colors.grey
 
-theme.background.hue_800 = "#181825"
-theme.background.hue_900 = "##1e1e2e"
+theme.background.hue_800 = "#292828"
+theme.background.hue_900 = "#32302f"
 
 local awesome_overrides = function(theme)
 	--

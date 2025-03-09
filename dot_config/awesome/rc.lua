@@ -57,7 +57,7 @@ _G.client.connect_signal(
 -- Make the focused window have a glowing border
 _G.client.connect_signal("focus", function(c)
 	--c.border_color = beautiful.border_focus
-	c.border_color = "#eab8ca"
+	c.border_color = "#ddc7a1"
 end)
 _G.client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
@@ -73,4 +73,3 @@ end)
 client.connect_signal("mouse::enter", function(c)
 	c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
-
