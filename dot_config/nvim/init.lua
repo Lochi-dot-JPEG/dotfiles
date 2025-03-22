@@ -839,6 +839,10 @@ require("lazy").setup({
 			lazy = "💤 ",
 		},
 	},
+}, {
+	rocks = {
+		hererocks = true, -- recommended if you do not have global installation of Lua 5.1.
+	},
 })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
