@@ -2,9 +2,9 @@
 
 ![alt text](https://github.com/Lochi-dot-JPEG/dotfiles/blob/main/rice.png?raw=true)
 
-## Catppuccin themed dotfiles for
+## Gruvbox matieral themed dotfiles for
 
-- AwesomeWM, with keybinds for 40% keyboards
+- AwesomeWM and Hyprland (both with keybinds for 40% keyboards
 - Kitty terminal
 - Neovim config (with ascii evangelion elevator start screen)
 
