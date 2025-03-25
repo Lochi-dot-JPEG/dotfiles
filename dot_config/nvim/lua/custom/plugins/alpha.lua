@@ -1566,6 +1566,7 @@ function M.init()
 	--extractColor(img)
 
 	dashboard.section.buttons.val = {
+		dashboard.button("d", " " .. " Daily Note", ":Lazy load obsidian.nvim<CR>:ObsidianToday<CR>"),
 		dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
 		dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
 		dashboard.button("c", " " .. " Config", ":e $HOME/.config/nvim/lua/plugins/init.lua<CR>"),

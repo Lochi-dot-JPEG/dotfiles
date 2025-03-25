@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+sleep $1 # For delaying on startup
+
 WALLPAPER_DIR="$HOME/Pictures/GruvboxWallpapers/"
 CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 
