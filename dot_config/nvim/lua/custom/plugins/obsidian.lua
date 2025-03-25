@@ -1,3 +1,7 @@
+local function switch_to_directory(dir_name)
+	vim.cmd("cd ~/vaults/" .. dir_name)
+	vim.notify("Opened vault " .. dir_name)
+end
 local builtin = require("telescope.builtin")
 return {
 	"epwalsh/obsidian.nvim",
@@ -13,13 +17,28 @@ return {
 	--   "BufNewFile path/to/my-vault/*.md",
 	-- },keys = {
 	keys = {
-		{ "<leader>og", "<cmd>ObsidianSearch<cr>", desc = "[O]bsidian [G]rep" },
-		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[O]bsidian [N]ew" },
-		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[O]bsidian [T]emplate" },
-		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[O]bsidian [D]ailies [T]oday" },
-		{ "<leader>oDt", "<cmd>ObsidianTomorrow<cr>", desc = "[O]bsidian [D]ailies to[M]morow" },
-		{ "<leader>oDs", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[O]bsidian [D]ailies [S]earch" },
-		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen [O]bsidian" },
+		{ "<leader>og", "<cmd>ObsidianSearch<cr>", desc = "[G]rep" },
+		{
+			"<leader>ovs",
+			function()
+				switch_to_directory("school")
+			end,
+			desc = "[V]ault [S]chool",
+		},
+		{
+			"<leader>ovb",
+			function()
+				switch_to_directory("brain")
+			end,
+			desc = "[V]ault [B]rain",
+		},
+		--{ "<leader>ovb", "<cmd>cd ~/vaults/brain<cr>", desc = "[V]ault [B]rain" },
+		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[N]ew" },
+		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[T]emplate" },
+		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[D]aily Note" },
+		{ "<leader>oDt", "<cmd>ObsidianTomorrow<cr>", desc = "[D]ailies to[M]morow" },
+		{ "<leader>oDs", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
+		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen Desktop App" },
 		{
 			"<leader>so",
 			function()

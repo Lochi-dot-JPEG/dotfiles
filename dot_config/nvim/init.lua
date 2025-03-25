@@ -172,8 +172,9 @@ require("lazy").setup({
 
 			-- Document existing key chains
 			require("which-key").add({
-				{ "<leader>c", group = "[C]ode" },
 				{ "<leader>o", group = "[O]bsidian" },
+				{ "<leader>ov", group = "[O]bsidian [V]ault" },
+				{ "<leader>c", group = "[C]ode" },
 				{ "<leader>c", group = "[C]onvert" },
 				{ "<leader>d", group = "[D]ocument" },
 				{ "<leader>r", group = "[R]ename" },
