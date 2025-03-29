@@ -7,7 +7,7 @@ return {
 			linters = {
 				-- https://github.com/LazyVim/LazyVim/discussions/4094#discussioncomment-10178217
 				["markdownlint-cli2"] = {
-					args = { "--config", os.getenv("HOME") .. ".markdownlint.yaml", "--" },
+					args = { "--config", os.getenv("HOME") .. ".markdownlint-cli2.yaml" },
 				},
 			},
 		},
@@ -18,9 +18,10 @@ return {
 			--mdlint.args = {
 			--"-r ~MD013",
 			--}
-			lint.linters_by_ft = {
-				markdown = { "markdownlint-cli2" },
-			}
+			--lint.linters_by_ft = {
+			--markdown = { "markdownlint-cli2" },
+			--}
+			lint.linters_by_ft["markdown"] = { "markdownlint-cli2" }
 
 			-- To allow other plugins to add linters to require('lint').linters_by_ft,
 			-- instead set linters_by_ft like this:

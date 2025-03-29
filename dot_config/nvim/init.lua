@@ -27,6 +27,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.smartindent = true
 
+vim.filetype.add({
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -770,6 +774,7 @@ require("lazy").setup({
 				"markdown",
 				"markdown_inline",
 				"vim",
+				"hyprlang",
 				"vimdoc",
 				"gdscript",
 				"godot_resource",
