@@ -17,6 +17,7 @@
     "modules-right": [
         //"mpd",
         //"idle_inhibitor",
+        "custom/cmus",
         "pulseaudio",
         //"network",
         //"power-profiles-daemon",
@@ -202,16 +203,25 @@
     },
     "custom/power": {
         "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     },
+    "custom/cmus": {
+            "format": "♪ {text}",
+            //"max-length": 15,
+            "interval": 10,
+            "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
+            "exec-if": "pgrep cmus",
+            "on-click": "cmus-remote -u",                        //toggle pause
+            "escape": true                                       //handle markup entities
+      },
     "hyprland/workspaces": {
         "persistent-workspaces": {
             "*": 5, // 5 workspaces by default on every monitor
