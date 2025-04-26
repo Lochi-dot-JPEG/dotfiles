@@ -36,8 +36,9 @@ return {
 		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[N]ew" },
 		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[T]emplate" },
 		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[D]aily Note" },
-		{ "<leader>oDt", "<cmd>ObsidianTomorrow<cr>", desc = "[D]ailies to[M]morow" },
-		{ "<leader>oDs", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
+		{ "<leader>ol", "<cmd>ObsidianToday 1<cr>", desc = "[l]Tomorrow" },
+		{ "<leader>oh", "<cmd>ObsidianToday -1<cr>", desc = "[h]Yesterday" },
+		{ "<leader>os", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
 		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen Desktop App" },
 		{
 			"<leader>so",
