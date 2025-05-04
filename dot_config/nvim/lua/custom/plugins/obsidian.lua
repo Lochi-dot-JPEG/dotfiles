@@ -32,6 +32,11 @@ return {
 			end,
 			desc = "[V]ault [B]rain",
 		},
+		{
+			"<leader>om",
+			":!python ~/.config/nvim/scripts/move_tasks_from_day.py<cr>",
+			desc = "[M]ove tasks from previous day",
+		},
 		--{ "<leader>ovb", "<cmd>cd ~/vaults/brain<cr>", desc = "[V]ault [B]rain" },
 		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[N]ew" },
 		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[T]emplate" },
