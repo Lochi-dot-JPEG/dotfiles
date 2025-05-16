@@ -11,7 +11,8 @@
         "tray"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "river/tags"
         //"hyprland/window"
     ],
     "modules-right": [
@@ -226,5 +227,8 @@
         "persistent-workspaces": {
             "*": 5, // 5 workspaces by default on every monitor
         }
+    },
+    "river/tags": {
+        "num-tags": 5
     }
 }

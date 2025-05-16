@@ -1,3 +1,5 @@
+@import '../../cache/wal/waybar.css';
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrainsMono;
@@ -79,6 +81,35 @@ button:hover {
 }
 
 #workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#tags button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ddc7a1;
+}
+
+#tags button.focused {
+    background-color: #504945;
+    color: #ddc7a1;
+}
+
+#tags button.empty {
+    /*background-color: red;*/
+    color: #665c54;
+}
+
+#tags button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#tags button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ddc7a1;
+}
+
+#tags button.urgent {
     background-color: #eb4d4b;
 }
 
