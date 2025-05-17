@@ -11,6 +11,7 @@ return {
 	config = function()
 		local notify = require("notify")
 		notify.setup({
+			background_colour = "#000000",
 			stages = "fade",
 			timeout = 4000,
 			max_height = function()

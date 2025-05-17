@@ -2,9 +2,10 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Configuration For Rofi Version: 1.7.3
  **/
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 
 configuration {
 	/*---------- General setting ----------*/
@@ -26,8 +27,7 @@ configuration {
 
 	/*---------- SSH settings ----------*/
 	ssh-client: "ssh";
-	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
-	parse-hosts: true;
+	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]"; parse-hosts: true;
 	parse-known-hosts: true;
 
 	/*---------- Drun settings ----------*/

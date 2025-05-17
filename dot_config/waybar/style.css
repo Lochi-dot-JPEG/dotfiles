@@ -1,4 +1,8 @@
-@import '../../cache/wal/waybar.css';
+@import '../../.cache/wal/colors-waybar.css';
+
+@define-color bg @background ;
+@define-color fg @foreground ;
+@define-color pane @color1;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -7,9 +11,9 @@
 }
 
 window#waybar {
-    background-color: #32302f;
+    background-color: @bg;
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-    color: #ddc7a1;
+    color: @fg;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -27,15 +31,6 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
@@ -52,23 +47,23 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #665c54;
+    background-color: @pane;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ddc7a1;
+    color: @fg;
 }
 
 #workspaces button.visible {
-    background-color: #504945;
-    color: #ddc7a1;
+    background-color: @pane;
+    color: @fg;
 }
 
 #workspaces button.empty {
     /*background-color: red;*/
-    color: #665c54;
+    color: @fg;
 }
 
 #workspaces button:hover {
@@ -87,17 +82,17 @@ button:hover {
 #tags button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ddc7a1;
+    color: @fg;
 }
 
 #tags button.focused {
-    background-color: #504945;
-    color: #ddc7a1;
+    background-color: @pane;
+    color: @fg;
 }
 
 #tags button.empty {
     /*background-color: red;*/
-    color: #665c54;
+    color: @fg;
 }
 
 #tags button:hover {
@@ -105,8 +100,8 @@ button:hover {
 }
 
 #tags button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ddc7a1;
+    background-color: @pane;
+    box-shadow: inset 0 -3px @fg;
 }
 
 #tags button.urgent {
@@ -136,7 +131,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ddc7a1;
+    color: @fg;
 }
 
 #window,
@@ -155,7 +150,7 @@ button:hover {
 }
 
 #clock {
-    background-color: #504945;
+    background-color: @pane;
 }
 
 #clock:hover {
@@ -240,13 +235,13 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #504945;
-    color: #ddc7a1;
+    background-color: @pane;
+    color: @fg;
 }
 
 #pulseaudio.muted {
     background-color: #bd6f3e;
-    color: #32302f;
+    color: @fg;
 }
 
 #wireplumber {
@@ -259,19 +254,19 @@ label:focus {
 }
 
 #custom-power {
-    background-color: #504945;
+    background-color: @pane;
     padding-right: 3px;
     padding-left: 10px;
 }
 
 #custom-cmus {
-    background-color: #504945;
+    background-color: @pane;
     padding-right: 10px;
     padding-left: 10px;
 }
 
 #custom-media {
-    background-color: #504945;
+    background-color: @pane;
     /*color: #2a5c45;
     min-width: 100px;*/
 }
@@ -293,7 +288,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #504945;
+    background-color: @pane;
 }
 
 #tray>.passive {
@@ -316,7 +311,7 @@ label:focus {
 
 #mpd {
     background-color: #66cc99;
-    color: #2a5c45;
+    color: @fg;
 }
 
 #mpd.disconnected {
