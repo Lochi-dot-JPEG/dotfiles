@@ -4,11 +4,7 @@ WALL_DIR=$HOME/Pictures/Wallpapers
 COLS=$(tput cols)
 #SELECTION=$(ls ~/Pictures/Wallpapers | gum filter --limit 1 --placeholder 'Pick a wallpaper' --prompt='>')
 
-if [[ $# -eq 0 ]] ; then
-	SELECTION=$(ls $WALL_DIR | fzf --preview catimg\ -w\ $COLS\ $WALL_DIR/{})
-else
-	SELECTION=$1
-fi
+SELECTION=$(ls $WALL_DIR | shuf -n 1)
 
 if [[ $SELECTION != '' ]]; then
 	killall swaybg

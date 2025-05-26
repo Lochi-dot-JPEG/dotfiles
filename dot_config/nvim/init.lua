@@ -8,7 +8,7 @@ vim.opt.spelllang = "en_au,en_us,en_gb"
 
 -- Line numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.tabstop = 4
 -- Enable mouse mode
@@ -39,7 +39,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 
 -- Decrease update time
 vim.opt.updatetime = 250
