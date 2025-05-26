@@ -19,7 +19,8 @@ PS1='[\u@\h \W]\$ '
 alias vim="nvim"
 alias vi="nvim"
 alias oo="cd ~/vaults/brain/"
-alias sp="spotify_player"
+alias ncdu="dua i & echo 'use dua'"
+alias dua="dua i"
 
 xset r rate 200 30
 
