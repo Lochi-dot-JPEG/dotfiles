@@ -3,6 +3,7 @@
 @define-color bg @background ;
 @define-color fg @foreground ;
 @define-color pane @color1;
+@define-color pane2 @color3;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -52,12 +53,12 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+    background-color: @pane;
     color: @fg;
 }
 
 #workspaces button.visible {
-    background-color: @pane;
+    background-color: @pane2;
     color: @fg;
 }
 

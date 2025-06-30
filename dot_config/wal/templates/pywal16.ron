@@ -52,7 +52,7 @@
                 pane: Pane(Tabs),
             ),
             (
-                size: "4",
+                size: "3",
                 pane: Split(
                     direction: Horizontal,
                     panes: [
@@ -63,7 +63,7 @@
                                 panes: [
                                     (
                                         size: "4",
-                                        borders: "ALL",
+                                        borders: "BOTTOM",
                                         pane: Pane(Header),
                                     ),
                                 ]
@@ -86,8 +86,8 @@
                 ),
             ),
             (
-                size: "3",
-                borders: "TOP | BOTTOM",
+                size: "2",
+                borders: "TOP",
                 pane: Pane(ProgressBar),
             ),
         ],

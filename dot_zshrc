@@ -183,3 +183,8 @@ source ~/.cache/wal/colors-tty.sh
 # shellcheck shell=bash
 
 eval "$(zoxide init zsh)"
+
+# This fixed some egl error i was getting on qutebrowser :/
+export LIBGL_ALWAYS_INDIRECT=0
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
