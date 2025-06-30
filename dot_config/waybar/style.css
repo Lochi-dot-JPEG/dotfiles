@@ -7,7 +7,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 13px;
 }
 
@@ -133,6 +133,7 @@ button:hover {
 #mpd {
     padding: 0 10px;
     color: @fg;
+    background-color: @pane;
 }
 
 #window,
@@ -150,24 +151,7 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
-    background-color: @pane;
-}
 
-#clock:hover {
-    background-color: #665c54;
-}
-
-#battery {
-    background-color: #ddc7a1;
-    color: #000000;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #ddc7a1;
-    background-color: #26A65B;
-}
 
 @keyframes blink {
     to {
@@ -215,33 +199,16 @@ label:focus {
     color: #000000;
 }
 
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
 
 #network.disconnected {
     background-color: #f53c3c;
 }
 
 #pulseaudio {
-    background-color: @pane;
     color: @fg;
 }
 
 #pulseaudio.muted {
-    background-color: #bd6f3e;
     color: @fg;
 }
 
