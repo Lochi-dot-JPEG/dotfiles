@@ -11,8 +11,9 @@ sleep 1
 if [[ $SELECTION != '' ]]; then
 	killall swaybg
 	~/.local/bin/wal -i $WALL_DIR/$SELECTION
-	swaybg -i $WALL_DIR/$SELECTION
-	#hyprctl hyprpaper reload ,"$WALL_DIR/$SELECTION"
+
+	rm ~/.config/hypr/lock.jpg
+	ln -s "$WALL_DIR/$SELECTION" ~/.config/hypr/lock.jpg
 
 	BG=$(jq .special.foreground ~/.cache/wal/colors.json)
 	BG="${BG//\"/}"
@@ -22,5 +23,5 @@ if [[ $SELECTION != '' ]]; then
 	FG="${FG//\"/}"
 	FG="0x${FG//#/}"
 
-
+	swaybg -i $WALL_DIR/$SELECTION &
 fi

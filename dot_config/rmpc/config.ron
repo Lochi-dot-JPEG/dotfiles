@@ -29,7 +29,7 @@
             samble_bits: 16,
         ),
         smoothing: (
-            noise_reduction: 0, // default 77
+            noise_reduction: 25, // default 77
             monstercat: false, // default false
             waves: false, // default false
         ),
