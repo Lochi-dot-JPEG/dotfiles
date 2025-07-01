@@ -10,7 +10,7 @@ SELECTION=$(ls $WALL_DIR | shuf -n 1)
 sleep 1
 if [[ $SELECTION != '' ]]; then
 	killall swaybg
-	~/.local/bin/wal -i $WALL_DIR/$SELECTION
+	wal -i $WALL_DIR/$SELECTION --backend modern_colorthief
 
 	rm ~/.config/hypr/lock.jpg
 	ln -s "$WALL_DIR/$SELECTION" ~/.config/hypr/lock.jpg

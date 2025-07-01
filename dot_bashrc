@@ -13,7 +13,7 @@ export PATH=$DEVKITARM/bin:$DEVKITPRO/tools/bin:$PATH  # optional
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias game='cd /home/lochie/Documents/Game/'
+alias game='cd ~/Documents/Game/'
 alias blahajfetch="fastfetch --logo blahaj"
 PS1='[\u@\h \W]\$ '
 alias vim="nvim"
@@ -28,4 +28,4 @@ xset r rate 200 30
 #blahajfetch
 
 # Created by `pipx` on 2024-11-03 06:02:38
-export PATH="$PATH:/home/lochie/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
