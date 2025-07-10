@@ -1,9 +1,9 @@
-@import '../../.cache/wal/colors-waybar.css';
+/*@import '../../.cache/wal/colors-waybar.css';*/
 
-@define-color bg @background ;
-@define-color fg @foreground ;
-@define-color pane @color1;
-@define-color pane2 @color3;
+@define-color bg #282828;
+@define-color fg #d4be98;
+@define-color pane #3c3836;
+@define-color pane2 #504945;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -13,7 +13,6 @@
 
 window#waybar {
     background-color: @bg;
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: @fg;
     transition-property: background-color;
     transition-duration: .5s;
