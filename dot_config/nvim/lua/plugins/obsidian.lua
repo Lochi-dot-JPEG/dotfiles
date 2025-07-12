@@ -4,10 +4,11 @@ local function switch_to_directory(dir_name)
 end
 local builtin = require("telescope.builtin")
 return {
-	"epwalsh/obsidian.nvim",
+
+	"obsidian-nvim/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
 	lazy = true,
-	ft = "markdown",
+	ft = "tarkdown",
 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 	-- event = {
 	--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -17,7 +18,7 @@ return {
 	--   "BufNewFile path/to/my-vault/*.md",
 	-- },keys = {
 	keys = {
-		{ "<leader>og", "<cmd>ObsidianSearch<cr>", desc = "[G]rep" },
+		{ "<leader>og", "<cmd>ObsidianSearch<cr>",          desc = "[G]rep" },
 		{
 			"<leader>ovs",
 			function()
@@ -25,6 +26,7 @@ return {
 			end,
 			desc = "[V]ault [S]chool",
 		},
+
 		{
 			"<leader>ovb",
 			function()
@@ -38,13 +40,13 @@ return {
 			desc = "[M]ove tasks from previous day",
 		},
 		--{ "<leader>ovb", "<cmd>cd ~/vaults/brain<cr>", desc = "[V]ault [B]rain" },
-		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[N]ew" },
-		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[T]emplate" },
-		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[D]aily Note" },
-		{ "<leader>ol", "<cmd>ObsidianToday 1<cr>", desc = "[l]Tomorrow" },
-		{ "<leader>oh", "<cmd>ObsidianToday -1<cr>", desc = "[h]Yesterday" },
+		{ "<leader>on", "<cmd>ObsidianNew<cr>",             desc = "[N]ew" },
+		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>",        desc = "[T]emplate" },
+		{ "<leader>od", "<cmd>ObsidianToday<cr>",           desc = "[D]aily Note" },
+		{ "<leader>ol", "<cmd>ObsidianToday 1<cr>",         desc = "[l]Tomorrow" },
+		{ "<leader>oh", "<cmd>ObsidianToday -1<cr>",        desc = "[h]Yesterday" },
 		{ "<leader>os", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
-		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen Desktop App" },
+		{ "<leader>oo", "<cmd>ObsidianOpen<cr>",            desc = "[O]pen Desktop App" },
 		{
 			"<leader>so",
 			function()
@@ -70,33 +72,31 @@ return {
 			{
 				name = "brain",
 				path = "~/vaults/brain",
-				overrides = {
-					notes_subdir = "notes",
-				},
-			},
-			{
-				name = "school",
-				path = "~/vaults/school",
-				daily_notes = {
-					-- Optional, if you keep daily notes in a separate directory.
-					folder = "dailies",
-					-- Optional, if you want to change the date format for the ID of daily notes.
-					date_format = "%Y-%m-%d",
-					-- Optional, if you want to change the date format of the default alias of daily notes.
-					alias_format = "%B %-d, %Y",
-					-- Optional, default tags to add to each new daily note created.
-					default_tags = { "daily-notes" },
-					-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-					template = "daily.md",
-				},
 			},
 		},
+		mappings = {
+			["gf"] = {
+				action = function()
+					return require("obsidian").util.gf_passthrough()
+				end,
+				opts = { noremap = false, expr = true, buffer = true },
+			},
+			["<cr>"] = {
+				action = function()
+					return require("obsidian").util.smart_action()
+				end,
+				opts = { buffer = true, expr = true },
+			},
+		},
+		-- Alternatively - and for backwards compatibility - you can set 'dir' to a single path instead of
+		-- 'workspaces'. For example:
+		-- dir = "~/vaults/work",
 
 		-- Optional, if you keep notes in a specific subdirectory of your vault.
 		notes_subdir = "notes",
 
 		-- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
-		-- levels defined by "vim.log.levels.*".
+		-- levels defined by "vim.log.levels.\*".
 		log_level = vim.log.levels.INFO,
 
 		daily_notes = {
@@ -110,45 +110,36 @@ return {
 			default_tags = { "daily-notes" },
 			-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
 			template = "daily.md",
+			-- Optional, if you want `Obsidian yesterday` to return the last work day or `Obsidian tomorrow` to return the next work day.
+			workdays_only = false,
 		},
 
 		-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 		completion = {
-			-- Set to false to disable completion.
-			nvim_cmp = true,
+			-- Enables completion using nvim_cmp
+			nvim_cmp = false,
+			-- Enables completion using blink.cmp
+			blink = true,
 			-- Trigger completion at 2 chars.
 			min_chars = 2,
 		},
-
 		-- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
 		-- way then set 'mappings = {}'.
-		mappings = {
-			-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-			["gf"] = {
-				action = function()
-					return require("obsidian").util.gf_passthrough()
-				end,
-				opts = { noremap = false, expr = true, buffer = true },
-			},
-			-- Toggle check-boxes.
-			["<leader>ch"] = {
-				action = function()
-					return require("obsidian").util.toggle_checkbox()
-				end,
-				opts = { buffer = true },
-			},
-			-- Smart action depending on context, either follow link or toggle checkbox.
-			["<cr>"] = {
-				action = function()
-					return require("obsidian").util.smart_action()
-				end,
-				opts = { buffer = true, expr = true },
-			},
-		},
+		--		mappings = {
+		--			-- Toggle check-boxes.
+		--			["<leader>ch"] = {
+		--				action = function()
+		--					return require("obsidian").util.toggle_checkbox()
+		--				end,
+		--				opts = { buffer = true },
+		--			},
+		--			-- Smart action depending on context, either follow link or toggle checkbox.
+		--			create_new = true,
+		--		},
 
 		-- Where to put new notes. Valid options are
-		--  * "current_dir" - put new notes in same directory as the current buffer.
-		--  * "notes_subdir" - put new notes in the default notes subdirectory.
+		-- _ "current_dir" - put new notes in same directory as the current buffer.
+		-- _ "notes_subdir" - put new notes in the default notes subdirectory.
 		new_notes_location = "notes_subdir",
 
 		-- Optional, customize how note IDs are generated given an optional title.
@@ -157,7 +148,8 @@ return {
 		note_id_func = function(title)
 			-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
 			-- In this case a note with the title 'My new note' will be given an ID that looks
-			-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+			-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'.
+			-- You may have as many periods in the note ID as you'd like—the ".md" will be added automatically
 			local suffix = ""
 			if title ~= nil then
 				-- If title is given, transform it into valid file name.
@@ -181,10 +173,10 @@ return {
 		end,
 
 		-- Optional, customize how wiki links are formatted. You can set this to one of:
-		--  * "use_alias_only", e.g. '[[Foo Bar]]'
-		--  * "prepend_note_id", e.g. '[[foo-bar|Foo Bar]]'
-		--  * "prepend_note_path", e.g. '[[foo-bar.md|Foo Bar]]'
-		--  * "use_path_only", e.g. '[[foo-bar.md]]'
+		-- _ "use_alias_only", e.g. '[[Foo Bar]]'
+		-- _ "prepend*note_id", e.g. '[[foo-bar|Foo Bar]]'
+		-- * "prepend*note_path", e.g. '[[foo-bar.md|Foo Bar]]'
+		-- * "use_path_only", e.g. '[[foo-bar.md]]'
 		-- Or you can set it to a function that takes a table of options and returns a string, like this:
 		wiki_link_func = function(opts)
 			return require("obsidian.util").wiki_link_id_prefix(opts)
@@ -223,46 +215,49 @@ return {
 			return out
 		end,
 
-		-- Optional, for templates (see below).
+		-- Optional, for templates (see https://github.com/obsidian-nvim/obsidian.nvim/wiki/Using-templates)
 		templates = {
 			folder = "templates",
 			date_format = "%Y-%m-%d",
-			-- e.g 08:45 pm
-			time_format = "%I:%M %p",
-			-- A map for custom variables, the key should be the variable and the value a function
+			time_format = "%H:%M",
+			-- A map for custom variables, the key should be the variable and the value a function.
+			-- Functions are called with obsidian.TemplateContext objects as their sole parameter.
+			-- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#substitutions
 			substitutions = {},
+
+			-- A map for configuring unique directories and paths for specific templates
+			--- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#customizations
+			customizations = {},
 		},
 
-		-- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
-		-- URL it will be ignored but you can customize this behavior here.
+		-- Sets how you follow URLs
 		---@param url string
 		follow_url_func = function(url)
-			-- Open the URL in the default web browser.
-			--vim.fn.jobstart({ "open", url }) -- Mac OS
-			vim.fn.jobstart({ "xdg-open", url }) -- linux
-			-- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
-			-- vim.ui.open(url) -- need Neovim 0.10.0+
+			vim.ui.open(url)
+			-- vim.ui.open(url, { cmd = { "firefox" } })
 		end,
 
-		-- Optional, by default when you use `:ObsidianFollowLink` on a link to an image
-		-- file it will be ignored but you can customize this behavior here.
+		-- Sets how you follow images
 		---@param img string
 		follow_img_func = function(img)
-			--vim.fn.jobstart({ "feh", "-p", img }) -- Mac OS quick look preview
-			-- vim.fn.jobstart({"xdg-open", url})  -- default linux
-			vim.fn.jobstart({ "feh", url }) -- linux
-			-- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+			vim.ui.open(img)
+			-- vim.ui.open(img, { cmd = { "loupe" } })
 		end,
 
-		-- Optional, set to true if you use the Obsidian Advanced URI plugin.
-		-- https://github.com/Vinzent03/obsidian-advanced-uri
-		use_advanced_uri = false,
-
-		-- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
-		open_app_foreground = false,
+		---@class obsidian.config.OpenOpts
+		---
+		---Opens the file with current line number
+		---@field use_advanced_uri? boolean
+		---
+		---Function to do the opening, default to vim.ui.open
+		---@field func? fun(uri: string)
+		open = {
+			use_advanced_uri = false,
+			func = vim.ui.open,
+		},
 
 		picker = {
-			-- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+			-- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', 'mini.pick' or 'snacks.pick'.
 			name = "telescope.nvim",
 			-- Optional, configure key mappings for the picker. These are the defaults.
 			-- Not all pickers support all mappings.
@@ -280,9 +275,16 @@ return {
 			},
 		},
 
+		-- Optional, by default, `:ObsidianBacklinks` parses the header under
+		-- the cursor. Setting to `false` will get the backlinks for the current
+		-- note instead. Doesn't affect other link behaviour.
+		backlinks = {
+			parse_headers = true,
+		},
+
 		-- Optional, sort search results by "path", "modified", "accessed", or "created".
 		-- The recommend value is "modified" and `true` for `sort_reversed`, which means, for example,
-		-- that `:ObsidianQuickSwitch` will show the notes sorted by latest modified time
+		-- that `:Obsidian quick_switch` will show the notes sorted by latest modified time
 		sort_by = "modified",
 		sort_reversed = true,
 
@@ -291,13 +293,14 @@ return {
 
 		-- Optional, determines how certain commands open notes. The valid options are:
 		-- 1. "current" (the default) - to always open in the current window
-		-- 2. "vsplit" - to open in a vertical split if there's not already a vertical split
-		-- 3. "hsplit" - to open in a horizontal split if there's not already a horizontal split
+		-- 2. "vsplit" - only open in a vertical split if a vsplit does not exist.
+		-- 3. "hsplit" - only open in a horizontal split if a hsplit does not exist.
+		-- 4. "vsplit_force" - always open a new vertical split if the file is not in the adjacent vsplit.
+		-- 5. "hsplit_force" - always open a new horizontal split if the file is not in the adjacent hsplit.
 		open_notes_in = "current",
 
 		-- Optional, define your own callbacks to further customize behavior.
 		callbacks = {
-			-- Runs at the end of `require("obsidian").setup()`.
 			---@param client obsidian.Client
 			post_setup = function(client) end,
 
@@ -325,7 +328,8 @@ return {
 		-- Optional, configure additional syntax highlighting / extmarks.
 		-- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
 		ui = {
-			enable = true, -- set to false to disable all additional syntax features
+			enable = true,      -- set to false to disable all additional syntax features
+			ignore_conceal_warn = false, -- set to true to disable conceallevel specific warning
 			update_debounce = 200, -- update delay after a text change (in milliseconds)
 			max_file_length = 5000, -- disable UI features for files with more than this many lines
 			-- Define how various check-boxes are displayed
@@ -367,30 +371,37 @@ return {
 			},
 		},
 
-		-- Specify how to handle attachments.
+		---@class obsidian.config.AttachmentsOpts
+		---
+		---Default folder to save images to, relative to the vault root.
+		---@field img_folder? string
+		---
+		---Default name for pasted images
+		---@field img_name_func? fun(): string
+		---
+		---Default text to insert for pasted images, for customizing, see: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Images
+		---@field img_text_func? fun(path: obsidian.Path): string
+		---
+		---Whether to confirm the paste or not. Defaults to true.
+		---@field confirm_img_paste? boolean
 		attachments = {
-			-- The default folder to place images in via `:ObsidianPasteImg`.
-			-- If this is a relative path it will be interpreted as relative to the vault root.
-			-- You can always override this per image by passing a full path to the command instead of just a filename.
-			img_folder = "assets/imgs", -- This is the default
-
-			-- Optional, customize the default name or prefix when pasting images via `:ObsidianPasteImg`.
-			---@return string
+			img_folder = "assets/imgs",
 			img_name_func = function()
-				-- Prefix image names with timestamp.
-				return string.format("%s-", os.time())
+				return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
 			end,
-
-			-- A function that determines the text to insert in the note when pasting an image.
-			-- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
-			-- This is the default implementation.
-			---@param client obsidian.Client
-			---@param path obsidian.Path the absolute path to the image file
-			---@return string
-			img_text_func = function(client, path)
-				path = client:vault_relative_path(path) or path
-				return string.format("![%s](%s)", path.name, path)
-			end,
+			confirm_img_paste = true,
 		},
+
+		-- See https://github.com/obsidian-nvim/obsidian.nvim/wiki/Notes-on-configuration#statusline-component
+		statusline = {
+			enabled = true,
+			format = "{{properties}} properties {{backlinks}} backlinks {{words}} words {{chars}} chars",
+		},
+		-- A list of workspace names, paths, and configuration overrides.
+		-- If you use the Obsidian app, the 'path' of a workspace should generally be
+		-- your vault root (where the `.obsidian` folder is located).
+		-- When obsidian.nvim is loaded by your plugin manager, it will automatically set
+		-- the workspace to the first workspace in the list whose `path` is a parent of the
+		-- current markdown file being edited.
 	},
 }
