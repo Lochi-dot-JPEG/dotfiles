@@ -14,8 +14,8 @@ function nvims() {
 bindkey -s ^a "nvims\n"
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=2000
-SAVEHIST=5000
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt autocd
 unsetopt beep
 bindkey -v

@@ -232,19 +232,6 @@ label:focus {
     padding-left: 10px;
 }
 
-#custom-media {
-    background-color: @pane;
-    /*color: #2a5c45;
-    min-width: 100px;*/
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
 
 #temperature {
     background-color: #f0932b;
@@ -274,6 +261,11 @@ label:focus {
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
     color: #2d3436;
+}
+
+#custom-media {
+    background-color: @pane;
+    color: @fg;
 }
 
 #mpd {

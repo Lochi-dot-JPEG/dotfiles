@@ -1,7 +1,0 @@
-yay -Sy bibata-cursor-theme-bin aseprite betterdiscord-installer-bin activitywatch-bin pnmixer hyprshot ttf-ms-fonts
-pacman -Sy neovim awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols obsidian chezmoi lazygit base-devel lxappearance feh flameshot xfce4-power-manager variety catimg river
-mkdir ~/Pictures/Screenshots
-
-install pywal16 to .local/bin
-ctrl + S, I in tmux to install plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

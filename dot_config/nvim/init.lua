@@ -8,7 +8,6 @@ vim.opt.spelllang = "en_au,en_us,en_gb"
 
 -- Line numbers
 vim.opt.number = true
-vim.opt.cmdheight = 0
 vim.opt.relativenumber = false
 
 vim.opt.tabstop = 4
