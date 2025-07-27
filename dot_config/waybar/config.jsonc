@@ -228,7 +228,16 @@
     "hyprland/workspaces": {
         "persistent-workspaces": {
             "*": 5, // 5 workspaces by default on every monitor
-        }
+        },
+        "format": "{icon}",
+        "format-icons": {
+                "1": "󰝚",
+                "2": "",
+                "3": "",
+                "4": " ",
+                "5": "󰙨",
+                "default": ""
+            },
     },
     "river/tags": {
         "num-tags": 5

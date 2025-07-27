@@ -51,6 +51,7 @@ button:hover {
 }
 
 #workspaces button {
+    min-width: 20px;
     padding: 0 5px;
     background-color: @pane;
     color: @fg;

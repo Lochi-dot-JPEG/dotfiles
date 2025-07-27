@@ -2,7 +2,7 @@ local function switch_to_directory(dir_name)
 	vim.cmd("cd ~/vaults/" .. dir_name)
 	vim.notify("Opened vault " .. dir_name)
 end
-local builtin = require("telescope.builtin")
+--local builtin = require("telescope.builtin")
 return {
 
 	"obsidian-nvim/obsidian.nvim",
@@ -47,13 +47,13 @@ return {
 		{ "<leader>oh", "<cmd>ObsidianToday -1<cr>",        desc = "[h]Yesterday" },
 		{ "<leader>os", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
 		{ "<leader>oo", "<cmd>ObsidianOpen<cr>",            desc = "[O]pen Desktop App" },
-		{
-			"<leader>so",
-			function()
-				builtin.find_files({ cwd = "~/vaults/brain" })
-			end,
-			desc = "[S]earch [O]bsidian Files",
-		},
+		--{
+		--"<leader>so",
+		--function()
+		--builtin.find_files({ cwd = "~/vaults/brain" })
+		--end,
+		--desc = "[S]earch [O]bsidian Files",
+		--},
 	},
 	dependencies = {
 		-- Required.
@@ -258,7 +258,7 @@ return {
 
 		picker = {
 			-- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', 'mini.pick' or 'snacks.pick'.
-			name = "telescope.nvim",
+			name = "snacks.pick",
 			-- Optional, configure key mappings for the picker. These are the defaults.
 			-- Not all pickers support all mappings.
 			note_mappings = {
