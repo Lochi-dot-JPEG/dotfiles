@@ -42,6 +42,9 @@ alias ncdu="dua i"
 # alias s="sesh connect \"\$(sesh list -i | gum filter --limit 1 --placeholder 'Pick a sesh' --prompt='>')\""
 # alias s="tmuxp load \"\$(tmuxp ls | gum filter --limit 1 --placeholder 'Pick a sesh' --prompt='>')\""
 alias s="~/Scripts/selector.sh"
+bright() (
+    brightnessctl set "$@"%
+)
 
 xset r rate 200 30
 
