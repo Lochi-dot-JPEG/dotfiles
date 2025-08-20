@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/lochie/.gtkrc-2.0.mine"
-gtk-theme-name="Gruvbox-Material-Dark"
-gtk-icon-theme-name="Papirus-Dark"
+gtk-theme-name="Materia-dark"
+gtk-icon-theme-name="Gruvbox-Material-Dark"
 gtk-font-name="Sans 10"
 gtk-cursor-theme-name="miku-cursor-linux"
 gtk-cursor-theme-size=24
