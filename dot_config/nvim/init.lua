@@ -92,6 +92,8 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 --vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>w", ":write<cr>", { desc = "[W]rite" })
+vim.keymap.set("n", "<leader>Q", ":quit<cr>", { desc = "[W]rite" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -168,7 +170,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	{                 -- Useful plugin to show you pending keybinds.
+	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
 		config = function() -- This is the function that runs, AFTER loading
@@ -176,46 +178,47 @@ require("lazy").setup({
 
 			-- Document existing key chains
 			require("which-key").add({
-				{ "<leader>o",  group = "[O]bsidian" },
+				{ "<leader>o", group = "[O]bsidian" },
 				{ "<leader>ov", group = "[O]bsidian [V]ault" },
-				{ "<leader>c",  group = "[C]ode" },
-				{ "<leader>c",  group = "[C]onvert" },
-				{ "<leader>d",  group = "[D]ocument" },
-				{ "<leader>r",  group = "[R]ename" },
-				{ "<leader>s",  group = "[S]earch" },
-				{ "<leader>w",  group = "[W]orkspace" },
+				{ "<leader>c", group = "[C]ode" },
+				{ "<leader>c", group = "[C]onvert" },
+				{ "<leader>d", group = "[D]ocument" },
+				{ "<leader>r", group = "[R]ename" },
+				{ "<leader>s", group = "[S]earch" },
+				{ "<leader>w", group = "[W]orkspace" },
 				--{ "<leader>t", group = "[T]oggle" },
-				{ "<leader>h",  group = "Git [H]unk",        mode = { "n", "v" } },
+				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 			})
 		end,
 	},
-	--{ -- Fuzzy Finder (files, lsp, etc)
-	--	"nvim-telescope/telescope.nvim",
-	--	event = "VimEnter",
-	--	branch = "master",
-	--	dependencies = {
-	--		"nvim-lua/plenary.nvim",
-	--		{ -- If encountering errors, see telescope-fzf-native README for installation instructions
-	--			"nvim-telescope/telescope-fzf-native.nvim",
-	--			"BurntSushi/ripgrep",
-	--			"sharkdp/fd",
-	--			"nvim-lua/plenary.nvim",
-	--			-- `build` is used to run some command when the plugin is installed/updated.
-	--			-- This is only run then, not every time Neovim starts up.
-	--			build = "make",
+	{ -- Fuzzy Finder (files, lsp, etc)
+		"nvim-telescope/telescope.nvim",
+		event = "VimEnter",
+		branch = "master",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ -- If encountering errors, see telescope-fzf-native README for installation instructions
+				"nvim-telescope/telescope-fzf-native.nvim",
+				"BurntSushi/ripgrep",
+				"sharkdp/fd",
+				"nvim-lua/plenary.nvim",
+				-- `build` is used to run some command when the plugin is installed/updated.
+				-- This is only run then, not every time Neovim starts up.
+				build = "make",
 
-	--			-- `cond` is a condition used to determine whether this plugin should be
-	--			-- installed and loaded.
-	--			cond = function()
-	--				return vim.fn.executable("make") == 1
-	--			end,
-	--		},
-	--		{ "nvim-telescope/telescope-file-browser.nvim" },
-	--		{ "nvim-telescope/telescope-ui-select.nvim" },
+				-- `cond` is a condition used to determine whether this plugin should be
+				-- installed and loaded.
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
+			{ "nvim-telescope/telescope-file-browser.nvim" },
+			{ "nvim-telescope/telescope-ui-select.nvim" },
 
-	--		-- Useful for getting pretty icons, but requires a Nerd Font.
-	--		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
-	--	},
+			-- Useful for getting pretty icons, but requires a Nerd Font.
+			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		},
+	},
 	--	config = function()
 	--		-- The easiest way to use Telescope, is to start by doing something like:
 	--		--	:Telescope help_tags
