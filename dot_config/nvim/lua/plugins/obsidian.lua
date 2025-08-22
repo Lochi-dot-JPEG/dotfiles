@@ -1,5 +1,5 @@
 local function switch_to_directory(dir_name)
-	vim.cmd("cd ~/vaults/" .. dir_name)
+	vim.cmd("cd ~/" .. dir_name)
 	vim.notify("Opened vault " .. dir_name)
 end
 --local builtin = require("telescope.builtin")
@@ -18,7 +18,7 @@ return {
 	--   "BufNewFile path/to/my-vault/*.md",
 	-- },keys = {
 	keys = {
-		{ "<leader>og", "<cmd>ObsidianSearch<cr>",          desc = "[G]rep" },
+		{ "<leader>og", "<cmd>ObsidianSearch<cr>", desc = "[G]rep" },
 		{
 			"<leader>ovs",
 			function()
@@ -30,7 +30,7 @@ return {
 		{
 			"<leader>ovb",
 			function()
-				switch_to_directory("brain")
+				switch_to_directory("Brain")
 			end,
 			desc = "[V]ault [B]rain",
 		},
@@ -40,13 +40,13 @@ return {
 			desc = "[M]ove tasks from previous day",
 		},
 		--{ "<leader>ovb", "<cmd>cd ~/vaults/brain<cr>", desc = "[V]ault [B]rain" },
-		{ "<leader>on", "<cmd>ObsidianNew<cr>",             desc = "[N]ew" },
-		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>",        desc = "[T]emplate" },
-		{ "<leader>od", "<cmd>ObsidianToday<cr>",           desc = "[D]aily Note" },
-		{ "<leader>ol", "<cmd>ObsidianToday 1<cr>",         desc = "[l]Tomorrow" },
-		{ "<leader>oh", "<cmd>ObsidianToday -1<cr>",        desc = "[h]Yesterday" },
+		{ "<leader>on", "<cmd>ObsidianNew<cr>", desc = "[N]ew" },
+		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "[T]emplate" },
+		{ "<leader>od", "<cmd>ObsidianToday<cr>", desc = "[D]aily Note" },
+		{ "<leader>ol", "<cmd>ObsidianToday 1<cr>", desc = "[l]Tomorrow" },
+		{ "<leader>oh", "<cmd>ObsidianToday -1<cr>", desc = "[h]Yesterday" },
 		{ "<leader>os", "<cmd>ObsidianDailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
-		{ "<leader>oo", "<cmd>ObsidianOpen<cr>",            desc = "[O]pen Desktop App" },
+		{ "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "[O]pen Desktop App" },
 		--{
 		--"<leader>so",
 		--function()
@@ -71,7 +71,7 @@ return {
 		workspaces = {
 			{
 				name = "brain",
-				path = "~/vaults/brain",
+				path = "~/Brain",
 			},
 		},
 		mappings = {
@@ -328,7 +328,7 @@ return {
 		-- Optional, configure additional syntax highlighting / extmarks.
 		-- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
 		ui = {
-			enable = true,      -- set to false to disable all additional syntax features
+			enable = true, -- set to false to disable all additional syntax features
 			ignore_conceal_warn = false, -- set to true to disable conceallevel specific warning
 			update_debounce = 200, -- update delay after a text change (in milliseconds)
 			max_file_length = 5000, -- disable UI features for files with more than this many lines
