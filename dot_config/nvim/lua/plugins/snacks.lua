@@ -33,7 +33,7 @@ return {
 		{ "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
 		--{ "<leader>sn",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
 		{ "<leader>sn",      function() Snacks.picker.files({ cwd = "~/.local/share/chezmoi" }) end, desc = "Find Config File" },
-		{ "<leader>so",      function() Snacks.picker.files({ cwd = "~/vaults/brain" }) end,         desc = "Search Obsidian" },
+		{ "<leader>so",      function() Snacks.picker.files({ cwd = "~/Brain" }) end,         desc = "Search Obsidian" },
 		{ "<leader>sf",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
 		{ "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
 		{ "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
