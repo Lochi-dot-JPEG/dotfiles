@@ -1,3 +1,29 @@
-return {}
---	"OXY2DEV/markview.nvim",
---	lazy = false,
+return {
+	"OXY2DEV/markview.nvim",
+	lazy = false,
+	priority = 49,
+	opts = {
+		preview = {
+			icon_provider = "devicons", -- "mini" or "devicons"
+		},
+	},
+	config = function()
+		local presets = require("markview.presets")
+		require("markview").setup({
+			markdown = {
+				headings = presets.headings.marker,
+				tables = presets.tables.double,
+				style = "simple",
+				metadata_minus = {
+					hl = "", -- clears the background highlight
+					border_hl = "", -- clears any border highlight
+					border_top_hl = "MarkviewGradient2",
+					border_bottom_hl = "MarkviewGradient2",
+					--border_bottom = "󰯋",
+					border_top = "",
+					border_bottom = "",
+				},
+			},
+		})
+	end,
+}
