@@ -1,7 +1,7 @@
 #!/bin/sh
 
 yay -Sy aseprite betterdiscord-installer-bin activitywatch-bin pnmixer ttf-ms-fonts mpdris2
-pacman -Sy neovim awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols obsidian chezmoi lazygit base-devel lxappearance feh flameshot xfce4-power-manager variety catimg swappy slurp hyprland
+pacman -Sy neovim awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols obsidian chezmoi lazygit base-devel lxappearance feh flameshot xfce4-power-manager variety swappy slurp hyprland gimagereader-qt
 
 mkdir ~/Pictures/Screenshots
 
