@@ -4,8 +4,8 @@
 (
     default_album_art_path: None,
     show_song_table_header: false,
-    draw_borders: true,
-    browser_column_widths: [20, 38, 42],
+    draw_borders: false,
+    browser_column_widths: [0, 58, 42],
     text_color: "#d4be98",
     tab_bar: (
         enabled: true,
@@ -24,7 +24,7 @@
         thumb_style: (fg: "#665c54"),
     ),
     scrollbar: (
-        symbols: ["", "", "", ""],
+        symbols: ["│", "█", "▲", "▼"],
         track_style: (fg: "#665c54"),
         ends_style: (fg: "#665c54"),
         thumb_style: (fg: "#665c54"),
@@ -50,9 +50,11 @@
     ],
     layout: Split(
         direction: Vertical,
+        borders: "ALL",
         panes: [
             (
-                size: "3",
+                size: "2",
+                borders: "BOTTOM",
                 pane: Pane(Tabs),
             ),
             (
@@ -66,8 +68,8 @@
                                 direction: Vertical,
                                 panes: [
                                     (
-                                        size: "4",
-                                        borders: "BOTTOM",
+                                        size: "2",
+                                        borders: "NONE",
                                         pane: Pane(Header),
                                     ),
                                 ]
@@ -75,6 +77,11 @@
                         ),
                     ]
                 ),
+            ),
+            (
+                size: "2",
+                borders: "BOTTOM",
+                pane: Pane(ProgressBar),
             ),
             (
                 size: "100%",
@@ -88,11 +95,6 @@
                         ),
                     ]
                 ),
-            ),
-            (
-                size: "2",
-                borders: "TOP",
-                pane: Pane(ProgressBar),
             ),
         ],
     ),
@@ -108,9 +110,10 @@
                     )
                 ],
                 right: [
-                    (kind: Text("Vol: "), style: (fg: "#928374", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "#928374", modifiers: "Bold")),
-                    (kind: Text("% "), style: (fg: "#928374", modifiers: "Bold"))
+                    (kind: Property(Widget(Volume)), style: (fg: "#928374"))
+                    //(kind: Text("Vol: "), style: (fg: "#928374", modifiers: "Bold")),
+                    //(kind: Property(Status(Volume)), style: (fg: "#928374", modifiers: "Bold")),
+                    //(kind: Text("% "), style: (fg: "#928374", modifiers: "Bold"))
                 ]
             ),
             (

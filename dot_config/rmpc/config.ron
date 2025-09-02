@@ -135,39 +135,40 @@
         (
             name: "Playing",
             pane: Split(
-                direction: Horizontal,
+                direction: Vertical,
                 panes: [
                     (
-                        size: "55%",
+                        size: "80%",
                         pane: Split(
-                            direction: Vertical,
+                            direction: Horizontal,
+                            size: "80%",
                             panes: [
                                 (
-                                    size: "80%",
-                                    pane: Pane(Queue)
+                                    size: "45%",
+                                    pane: Pane(AlbumArt)
                                 ),
                                 (
-                                    size: "20%",
-                                    pane: Pane(Lyrics),
+                                    size: "55%",
+                                    pane: Split(
+                                        direction: Vertical,
+                                        panes: [
+                                            (
+                                                size: "80%",
+                                                pane: Pane(Queue)
+                                            ),
+                                            (
+                                                size: "20%",
+                                                pane: Pane(Lyrics),
+                                            ),
+                                        ]
+                                    )
                                 ),
                             ]
                         )
                     ),
                     (
-                        size: "45%",
-                        pane: Split(
-                            direction: Vertical,
-                            panes: [
-                                (
-                                    size: "80%",
-                                    pane: Pane(AlbumArt)
-                                ),
-                                (
-                                    size: "20%",
-                                    pane: Pane(Cava),
-                                ),
-                            ]
-                        )
+                        size: "20%",
+                        pane: Pane(Cava),
                     ),
                 ],
             ),
