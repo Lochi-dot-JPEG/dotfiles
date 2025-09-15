@@ -75,25 +75,22 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
--- [[ Basic Keymaps ]]
---	See `:help vim.keymap.set()`
-
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- Remap ; to : to make commands easier
---vim.keymap.set("n", ";", ":")
---Disabled because it stopped going to the next occurance of a search with f
+-- [[ Basic Keymaps ]]
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
---vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end,
+	{ desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = 1, float = true }) end,
+	{ desc = "Go to next [D]iagnostic message" })
+--vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("n", "<leader>w", ":write<cr>", { desc = "[W]rite" })
-vim.keymap.set("n", "<leader>Q", ":quit<cr>", { desc = "[W]rite" })
+vim.keymap.set("n", "<leader>Q", ":quit<cr>", { desc = "[Q]uit" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -102,15 +99,6 @@ vim.keymap.set("n", "<leader>Q", ":quit<cr>", { desc = "[W]rite" })
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
--- Keybinds to make split navigation easier.
---	Use CTRL+<hjkl> to switch between windows
 --
 --	See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -119,15 +107,12 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("n", "<leader>i", ":Nerdy<CR>", { desc = "Search [I]cons" })
--- [[ Basic Autocommands ]]
---	See `:help lua-guide-autocommands`
+
+
 
 -- Highlight when yanking (copying) text
 --	Try it with `yap` in normal mode
 --	See `:help vim.highlight.on_yank()`
-
--- put this in your main init.lua file ( before lazy setup )
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -170,7 +155,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ -- Useful plugin to show you pending keybinds.
+	{                 -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
 		config = function() -- This is the function that runs, AFTER loading
@@ -178,16 +163,16 @@ require("lazy").setup({
 
 			-- Document existing key chains
 			require("which-key").add({
-				{ "<leader>o", group = "[O]bsidian" },
+				{ "<leader>o",  group = "[O]bsidian" },
 				{ "<leader>ov", group = "[O]bsidian [V]ault" },
-				{ "<leader>c", group = "[C]ode" },
-				{ "<leader>c", group = "[C]onvert" },
-				{ "<leader>d", group = "[D]ocument" },
-				{ "<leader>r", group = "[R]ename" },
-				{ "<leader>s", group = "[S]earch" },
-				{ "<leader>w", group = "[W]orkspace" },
+				{ "<leader>c",  group = "[C]ode" },
+				{ "<leader>c",  group = "[C]onvert" },
+				{ "<leader>d",  group = "[D]ocument" },
+				{ "<leader>r",  group = "[R]ename" },
+				{ "<leader>s",  group = "[S]earch" },
+				{ "<leader>w",  group = "[W]orkspace" },
 				--{ "<leader>t", group = "[T]oggle" },
-				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+				{ "<leader>h",  group = "Git [H]unk",        mode = { "n", "v" } },
 			})
 		end,
 	},
@@ -216,7 +201,7 @@ require("lazy").setup({
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 
 			-- Useful for getting pretty icons, but requires a Nerd Font.
-			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons",               enabled = vim.g.have_nerd_font },
 		},
 	},
 	--	config = function()
@@ -532,52 +517,27 @@ require("lazy").setup({
 
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
-		-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-		-- build = 'cargo build --release',
-		-- If you use nix, you can build from source using latest nightly rust with:
-		-- build = 'nix run .#build-plugin',
 
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
-			-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-			-- 'super-tab' for mappings similar to vscode (tab to accept)
-			-- 'enter' for enter to accept
-			-- 'none' for no mappings
-			--
-			-- All presets have the following mappings:
-			-- C-space: Open menu or open docs if already open
-			-- C-n/C-p or Up/Down: Select next/previous item
-			-- C-e: Hide menu
-			-- C-k: Toggle signature help (if signature.enabled = true)
-			--
-			-- See :h blink-cmp-config-keymap for defining your own keymap
 			keymap = { preset = "super-tab" },
 
 			appearance = {
-				-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-				-- Adjusts spacing to ensure icons are aligned
 				nerd_font_variant = "mono",
 			},
 
-			-- (Default) Only show the documentation popup when manually triggered
+			enabled = function() return not vim.tbl_contains({ "lua", "markdown" }, vim.bo.filetype) end,
 			completion = { documentation = { auto_show = false } },
 
-			-- Default list of enabled providers defined so that you can extend it
-			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
 				--default = { "lsp", "path", "snippets", "buffer" },
 				default = { "lsp", "path", "snippets" },
-				per_filetype = {
-					markdown = { "lsp" },
-				},
+				--per_filetype = {
+				--markdown = {},
+				--},
 			},
 
-			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
-			-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
-			-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
-			--
-			-- See the fuzzy documentation for more information
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
@@ -695,20 +655,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-	-- init.lua. If you want these files, they are in the repository, so you can just download them and
-	-- place them in the correct locations.
-
-	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-	--
-	--	Here are some example plugins that I've included in the Kickstart repository.
-	--	Uncomment any of the lines below to enable them (you will need to restart nvim).
-
-	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-	--		This is the easiest way to modularize your config.
-	--
-	--	Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-	--		For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
 	{ import = "plugins" },
 }, {
 	ui = {
@@ -790,12 +736,9 @@ vim.keymap.set(
 	":set noexpandtab!<cr>:%retab!<cr>",
 	{ desc = "Convert tabs to [S]paces", noremap = true, silent = true }
 )
+
 vim.keymap.set("n", "<leader>ts", function()
 	vim.opt.spell = not (vim.opt.spell:get())
 end, { desc = "[T]oggle [S]pelling", noremap = true, silent = true })
 
 -- put this after lazy setup
-
--- (method 1, For heavy lazyloaders)
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")

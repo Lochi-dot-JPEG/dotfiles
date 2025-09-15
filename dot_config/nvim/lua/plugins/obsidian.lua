@@ -59,7 +59,7 @@ return {
 			-- Enables completion using nvim_cmp
 			nvim_cmp = false,
 			-- Enables completion using blink.cmp
-			blink = true,
+			blink = false,
 			-- Trigger completion at 2 chars.
 			min_chars = 2,
 			-- Set to false to disable new note creation in the picker
