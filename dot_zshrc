@@ -25,6 +25,7 @@ PS1='[\u@\h \W]\$ '
 alias vim="nvim"
 alias vi="nvim"
 alias chz="chezmoi"
+alias lg="lazygit"
 alias cha="chezmoi apply"
 alias oo="cd ~/vaults/brain/"
 alias dua="dua i"
