@@ -20,7 +20,8 @@ set $term kitty
 set $menu sh ~/.config/rofi/launchers/type-3/launcher.sh
 
 set $browser chromium
-
+set $bookmarks sh ~/Scripts/bookmarks.sh
+set $wallpaper sh ~/Scripts/swaywallpaper.sh
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -79,6 +80,9 @@ input "type:keyboard" {
     # Start a terminal
     bindsym $mod+e exec $term
     bindsym $mod+w exec $browser
+
+    bindsym $mod+b exec $bookmarks
+    bindsym $mod+p exec $wallpaper
 
     # Kill focused window
     bindsym $mod+q kill
@@ -155,8 +159,8 @@ input "type:keyboard" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    #bindsym $mod+b splith
+    #bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+z layout stacking
