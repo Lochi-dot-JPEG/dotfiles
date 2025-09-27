@@ -6,6 +6,7 @@ DIRS=(
     "$HOME/Documents"
     "$HOME"
     "$HOME/Game"
+    "$HOME/Projects"
 )
 
 SINGLE_DIRS=(
@@ -32,4 +33,8 @@ if ! tmux has-session -t "$selected_name"; then
     tmux select-window -t "$selected_name:1"
 fi
 
-tmux switch-client -t "$selected_name"
+if [[ $# -eq 1 ]]; then
+    tmux a -t "$selected_name"
+else
+    tmux switch-client -t "$selected_name"
+fi
