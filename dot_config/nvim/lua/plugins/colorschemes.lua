@@ -1,5 +1,20 @@
 return {
 	{
+		"catppuccin/nvim",
+	},
+	{
+		"shaunsingh/nord.nvim",
+	},
+	{
+		"rose-pine/neovim",
+	},
+	{
+		"numToStr/Sakura.nvim",
+	},
+	{
+		"vague2k/vague.nvim",
+	},
+	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,

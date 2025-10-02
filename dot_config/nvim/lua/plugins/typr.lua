@@ -1,3 +1,0 @@
-return {
-	"nvzone/typr",
-}

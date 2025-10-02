@@ -90,6 +90,7 @@ vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = 1, float = tr
 	{ desc = "Go to next [D]iagnostic message" })
 --vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("n", "<leader>w", ":write<cr>", { desc = "[W]rite" })
+vim.keymap.set("n", "<leader>W", ":SudaWrite<cr>", { desc = "[W]rite with sudo" })
 vim.keymap.set("n", "<leader>Q", ":quit<cr>", { desc = "[Q]uit" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -130,12 +131,6 @@ if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
-
-local gdproject = io.open(vim.fn.getcwd() .. "/project.godot", "r")
-if gdproject then
-	io.close(gdproject)
-	vim.fn.serverstart("./godothost")
-end
 
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically-- Lua
@@ -394,13 +389,14 @@ require("lazy").setup({
 			--capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			local lspconfig = require("lspconfig")
 
-			lspconfig["lua_ls"].setup({ capabilities = capabilities })
+			vim.lsp.config("lua_ls", { capabilities = capabilities })
+			vim.lsp.config("gdscript", {
+				capabilities = capabilities,
+			})
 
 			-- Enable the following language servers
 			--	Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-			require("lspconfig").gdscript.setup(capabilities)
 			-- enable the following language servers
 			--	feel free to add/remove any lsps that you want here. they will automatically be installed.
 			--

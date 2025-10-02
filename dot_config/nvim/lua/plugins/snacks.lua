@@ -49,6 +49,7 @@ return {
 		{ "<leader>sp",      function() Snacks.picker.lazy() end,                                    desc = "Search for Plugin Spec" },
 		{ "<leader>sq",      function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
 		{ "<leader>s'",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
+		{ "<leader>sc",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
 
 		-- LSP
 		{ "gd",              function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
@@ -76,7 +77,6 @@ return {
 --{ "<leader>gd",      function() Snacks.picker.git_diff() end,                                desc = "Git Diff (Hunks)" },
 --{ "<leader>gf",      function() Snacks.picker.git_log_file() end,                            desc = "Git Log File" },
 --{ "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
---{ "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
 --{ "<leader>sH",      function() Snacks.picker.highlights() end,                              desc = "Highlights" },
 --{ "<leader>sD",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Buffer Diagnostics" },
 --{ "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
