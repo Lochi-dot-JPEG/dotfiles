@@ -31,7 +31,7 @@ alias oo="cd ~/vaults/brain/"
 alias dua="dua i"
 alias ncdu="dua i"
 
-alias s="~/Scripts/tmux-session-dispensary.sh ~/Brain"
+alias s="~/Scripts/tmux-session-dispensary.sh"
 bright() (
     brightnessctl set "$@"%
 )

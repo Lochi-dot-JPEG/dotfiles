@@ -15,6 +15,9 @@ return {
 		"vague2k/vague.nvim",
 	},
 	{
+		"rebelot/kanagawa.nvim",
+	},
+	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,

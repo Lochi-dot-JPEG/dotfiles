@@ -88,8 +88,7 @@ vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = t
 	{ desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = 1, float = true }) end,
 	{ desc = "Go to next [D]iagnostic message" })
---vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-vim.keymap.set("n", "<leader>w", ":write<cr>", { desc = "[W]rite" })
+vim.keymap.set("n", "<leader>w", ":update<cr>", { desc = "[W]rite" })
 vim.keymap.set("n", "<leader>W", ":SudaWrite<cr>", { desc = "[W]rite with sudo" })
 vim.keymap.set("n", "<leader>Q", ":quit<cr>", { desc = "[Q]uit" })
 
@@ -171,138 +170,33 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{ -- Fuzzy Finder (files, lsp, etc)
-		"nvim-telescope/telescope.nvim",
-		event = "VimEnter",
-		branch = "master",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{ -- If encountering errors, see telescope-fzf-native README for installation instructions
-				"nvim-telescope/telescope-fzf-native.nvim",
-				"BurntSushi/ripgrep",
-				"sharkdp/fd",
-				"nvim-lua/plenary.nvim",
-				-- `build` is used to run some command when the plugin is installed/updated.
-				-- This is only run then, not every time Neovim starts up.
-				build = "make",
-
-				-- `cond` is a condition used to determine whether this plugin should be
-				-- installed and loaded.
-				cond = function()
-					return vim.fn.executable("make") == 1
-				end,
-			},
-			{ "nvim-telescope/telescope-file-browser.nvim" },
-			{ "nvim-telescope/telescope-ui-select.nvim" },
-
-			-- Useful for getting pretty icons, but requires a Nerd Font.
-			{ "nvim-tree/nvim-web-devicons",               enabled = vim.g.have_nerd_font },
-		},
-	},
-	--	config = function()
-	--		-- The easiest way to use Telescope, is to start by doing something like:
-	--		--	:Telescope help_tags
-	--		--
-	--		-- After running this command, a window will open up and you're able to
-	--		-- type in the prompt window. You'll see a list of `help_tags` options and
-	--		-- a corresponding preview of the help.
-	--		--
-	--		-- Two important keymaps to use while in Telescope are:
-	--		--	- Insert mode: <c-/>
-	--		--	- Normal mode: ?
-	--		--
-	--		-- This opens a window that shows you all of the keymaps for the current
-	--		-- Telescope picker. This is really useful to discover what Telescope can
-	--		-- do as well as how to actually do it!
-
-	--		-- [[ Configure Telescope ]]
-	--		-- See `:help telescope` and `:help telescope.setup()`
-	--		require("telescope").setup({
-	--			-- You can put your default mappings / updates / etc. in here
-	--			--	All the info you're looking for is in `:help telescope.setup()`
-	--			--
-	--			defaults = {
-	--				mappings = {
-	--					["i"] = {
-	--						["<Tab>"] = require("telescope.actions").close,
-	--						-- your custom insert mode mappings
-	--					},
-	--					["n"] = {
-	--						["<Tab>"] = require("telescope.actions").close,
-
-	--						-- your custom normal mode mappings
-	--					},
-	--					--i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-	--				},
-	--				file_ignore_patterns = { "%.uid", "%.gif" },
-	--			},
-	--			-- pickers = {}
-	--			extensions = {
-	--				["ui-select"] = {
-	--					require("telescope.themes").get_dropdown(),
-	--				},
-	--				hijack_netrw = true,
-	--				mappings = {
-	--					["i"] = {
-	--						-- your custom insert mode mappings
-	--					},
-	--					["n"] = {
-	--						-- your custom normal mode mappings
-	--					},
-	--				},
-	--			},
-	--		})
-	--		require("telescope").load_extension("file_browser")
-	--		-- Enable Telescope extensions if they are installed
-	--		pcall(require("telescope").load_extension, "fzf")
-	--		pcall(require("telescope").load_extension, "ui-select")
-	--		pcall(require("telescope").load_extension, "notify")
-	--		--require("telescope").extensions.notify.notify()
-
-	--		-- See `:help telescope.builtin`
-	--		local builtin = require("telescope.builtin")
-	--		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-	--		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-	--		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-	--		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-	--		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-	--		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-	--		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-	--		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-	--		vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-	--		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
-	--		--vim.keymap.set("n", "<leader>st", builtin.colorscheme, { desc = "[S]earch [T]hemes" })
-
-	--		vim.keymap.set("n", "<leader>ff", ":Telescope file_browser<CR>", { desc = "[F]ile [B]rowser" })
-
-	--		-- open file_browser with the path of the current buffer
-	--		vim.keymap.set("n", "<leader>ff", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
-
-	--		-- Slightly advanced example of overriding default behavior and theme
-	--		vim.keymap.set("n", "<leader>/", function()
-	--			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
-	--			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-	--				winblend = 10,
-	--				previewer = false,
-	--			}))
-	--		end, { desc = "[/] Fuzzily search in current buffer" })
-
-	--		-- It's also possible to pass additional configuration options.
-	--		--	See `:help telescope.builtin.live_grep()` for information about particular keys
-	--		vim.keymap.set("n", "<leader>s/", function()
-	--			builtin.live_grep({
-	--				grep_open_files = true,
-	--				prompt_title = "Live Grep in Open Files",
-	--			})
-	--		end, { desc = "[S]earch [/] in Open Files" })
-
-	--		-- Shortcut for searching your Neovim configuration files
-	--		vim.keymap.set("n", "<leader>sn", function()
-	--			builtin.find_files({ cwd = "~/.local/share/chezmoi" })
-	--		end, { desc = "[S]earch [N]eovim files" })
-	--	end,
-	--},
-
+--	{ -- Fuzzy Finder (files, lsp, etc)
+--		"nvim-telescope/telescope.nvim",
+--		event = "VimEnter",
+--		branch = "master",
+--		dependencies = {
+--			{ -- If encountering errors, see telescope-fzf-native README for installation instructions
+--				"nvim-telescope/telescope-fzf-native.nvim",
+--				"BurntSushi/ripgrep",
+--				"sharkdp/fd",
+--				"nvim-lua/plenary.nvim",
+--				-- `build` is used to run some command when the plugin is installed/updated.
+--				-- This is only run then, not every time Neovim starts up.
+--				build = "make",
+--
+--				-- `cond` is a condition used to determine whether this plugin should be
+--				-- installed and loaded.
+--				cond = function()
+--					return vim.fn.executable("make") == 1
+--				end,
+--			},
+--			{ "nvim-telescope/telescope-file-browser.nvim" },
+--			{ "nvim-telescope/telescope-ui-select.nvim" },
+--
+--			-- Useful for getting pretty icons, but requires a Nerd Font.
+--		},
+--	},
+	{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -326,24 +220,7 @@ require("lazy").setup({
 					local map = function(keys, func, desc)
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
-
-					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-					map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-					map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-					map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-
-					-- Fuzzy find all the symbols in your current document.
-					--	Symbols are things like variables, functions, types, etc.
-					map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-
-					-- Fuzzy find all the symbols in your current workspace.
-					--	Similar to document symbols, except searches over your entire project.
-					map(
-						"<leader>ws",
-						require("telescope.builtin").lsp_dynamic_workspace_symbols,
-						"[W]orkspace [S]ymbols"
-					)
-
+					
 					-- Rename the variable under your cursor.
 					--	Most Language Servers support renaming across files, etc.
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")

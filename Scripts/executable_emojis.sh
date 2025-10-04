@@ -3895,7 +3895,7 @@ EMOJIS="😀 grinning face
 🏴󠁧󠁢󠁳󠁣󠁴󠁿 flag Scotland
 🏴󠁧󠁢󠁷󠁬󠁳󠁿 flag Wales"
 
-CHOICE=$(cat ~/Scripts/emojilist | dmenu)
+CHOICE=$(echo "$EMOJIS" | dmenu -i)
 wl-copy ${CHOICE:0:1}
 wtype "$(wl-paste)"
 notify-send "Emoji copied to clipboard" "$CHOICE"

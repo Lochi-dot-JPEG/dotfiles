@@ -10,4 +10,4 @@ if ! tmux has-session -t "$selected_name"; then
     tmux select-window -t "$selected_name:1"
 fi
 
-tmux a -t "$selected_name"
+tmux a -t "$selected_name" -c "$HOME/Scripts/tmux-session-dispensary.sh"

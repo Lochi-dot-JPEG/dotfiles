@@ -36,5 +36,9 @@ fi
 if [[ $# -eq 1 ]]; then
     tmux a -t "$selected_name"
 else
-    tmux switch-client -t "$selected_name"
+    if [[ $TMUX != "" ]]; then
+        tmux switch-client -t "$selected_name"
+    else
+        tmux a -t "$selected_name"
+    fi
 fi
