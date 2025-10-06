@@ -1,30 +1,6 @@
-return {
-	"obsidian-nvim/obsidian.nvim",
-	version = "3.*", -- recommended, use latest release instead of latest commit
-	lazy = false,
-	ft = "markdown",
-	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-	-- event = {
-	--	 -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-	--	 -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-	--	 -- refer to `:h file-pattern` for more examples
-	--	 "BufReadPre path/to/my-vault/*.md",
-	--	 "BufNewFile path/to/my-vault/*.md",
-	-- },
-	--
-	keys = {
-		{ "<leader>og", "<cmd>Obsidian search<cr>", desc = "[G]rep" },
-		{ "<leader>on", "<cmd>Obsidian new<cr>", desc = "[N]ew" },
-		{ "<leader>ot", "<cmd>Obsidian template<cr>", desc = "[T]emplate" },
-		{ "<leader>od", "<cmd>Obsidian today<cr>", desc = "[D]aily Note" },
-		{ "<leader>ol", "<cmd>Obsidian today 1<cr>", desc = "[l]Tomorrow" },
-		{ "<leader>oh", "<cmd>Obsidian today -1<cr>", desc = "[h]Yesterday" },
-		{ "<leader>os", "<cmd>Obsidian dailies -1 -365<cr>", desc = "[D]ailies [S]earch" },
-		{ "<leader>oo", "<cmd>Obsidian open<cr>", desc = "[O]pen Desktop App" },
-	},
-	---@module 'obsidian'
-	---@type obsidian.config
-	opts = {
+vim.pack.add({ "https://github.com/obsidian-nvim/obsidian.nvim", })
+
+require("obsidian").setup({
 		legacy_commands = false,
 		workspaces = {
 			{
@@ -54,17 +30,6 @@ return {
 			workdays_only = false,
 		},
 
-		-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
-		completion = {
-			-- Enables completion using nvim_cmp
-			nvim_cmp = false,
-			-- Enables completion using blink.cmp
-			blink = true,
-			-- Trigger completion at 2 chars.
-			min_chars = 2,
-			-- Set to false to disable new note creation in the picker
-			create_new = true,
-		},
 
 		-- Where to put new notes. Valid options are
 		-- _ "current_dir" - put new notes in same directory as the current buffer.
@@ -125,24 +90,26 @@ return {
 
 		-- Optional, alternatively you can customize the frontmatter data.
 		---@return table
-		note_frontmatter_func = function(note)
-			-- Add the title of the note as an alias.
-			if note.title then
-				note:add_alias(note.title)
-			end
+		frontmatter = {
+				func = function(note)
+					-- Add the title of the note as an alias.
+					if note.title then
+						note:add_alias(note.title)
+					end
 
-			local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+					local out = { id = note.id, aliases = note.aliases, tags = note.tags }
 
-			-- `note.metadata` contains any manually added fields in the frontmatter.
-			-- So here we just make sure those fields are kept in the frontmatter.
-			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-				for k, v in pairs(note.metadata) do
-					out[k] = v
-				end
-			end
+					-- `note.metadata` contains any manually added fields in the frontmatter.
+					-- So here we just make sure those fields are kept in the frontmatter.
+					if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+						for k, v in pairs(note.metadata) do
+							out[k] = v
+						end
+					end
 
-			return out
-		end,
+					return out
+				end,
+		},
 
 		-- Optional, for templates (see https://github.com/obsidian-nvim/obsidian.nvim/wiki/Using-templates)
 		templates = {
@@ -204,7 +171,6 @@ return {
 			},
 		},
 
-		-- Optional, by default, `:ObsidianBacklinks` parses the header under
 		-- the cursor. Setting to `false` will get the backlinks for the current
 		-- note instead. Doesn't affect other link behaviour.
 		backlinks = {
@@ -326,6 +292,15 @@ return {
 		---@field order? string[]
 		checkbox = {
 			order = { " ", "x", "!", ">"},
-		},
-	},
-}
+		}
+})
+
+local map = vim.keymap.set
+map ("n", "<leader>og", "<cmd>Obsidian search<cr>", { desc = "[G]rep" })
+map ("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "[N]ew" })
+map ("n", "<leader>ot", "<cmd>Obsidian template<cr>", { desc = "[T]emplate" })
+map ("n", "<leader>od", "<cmd>Obsidian today<cr>", { desc = "[D]aily Note" })
+map ("n", "<leader>ol", "<cmd>Obsidian today 1<cr>", { desc = "[l]Tomorrow" })
+map ("n", "<leader>oh", "<cmd>Obsidian today -1<cr>", { desc = "[h]Yesterday" })
+map ("n", "<leader>os", "<cmd>Obsidian dailies -1 -365<cr>", { desc = "[D]ailies [S]earch" })
+map ("n", "<leader>oo", "<cmd>Obsidian open<cr>", { desc = "[O]pen Desktop App" })
