@@ -19,7 +19,8 @@ set $term kitty
 # Your preferred application launcher
 set $menu sh ~/.config/rofi/launchers/type-3/launcher.sh
 
-set $browser chromium
+set $browser zen-browser
+set $altbrowser chromium
 set $bookmarks sh ~/Scripts/bookmarks.sh
 set $wallpaper sh ~/Scripts/swaywallpaper.sh
 ### Output configuration
@@ -27,7 +28,7 @@ set $wallpaper sh ~/Scripts/swaywallpaper.sh
 
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/Wallpapers/a_beach_with_trees_on_the_side.jpg fill
+#output * bg $HOME/Pictures/Wallpapers/a_beach_with_trees_on_the_side.jpg fill
 #
 # Example configuration:
 #
@@ -53,6 +54,8 @@ exec kanshi
 exec sh ~/Scripts/mpd_start.sh
 exec steam -silent
 exec nm-applet
+exec $wallpaper
+exec otd-daemon
 
 default_border none
 mouse_warping container
@@ -83,8 +86,11 @@ input "type:keyboard" {
 # Basics:
 #
     # Start a terminal
+    bindsym $mod+z exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Shift+c exec hyprpicker -a
     bindsym $mod+e exec $term
     bindsym $mod+w exec $browser
+    bindsym $mod+Shift+w exec $altbrowser
     #bindsym $mod+n exec $mpd
 
     bindsym $mod+b exec $bookmarks
@@ -170,8 +176,8 @@ input "type:keyboard" {
     #bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+z layout stacking
-    bindsym $mod+x layout tabbed
+    #bindsym $mod+z layout stacking
+    #bindsym $mod+x layout tabbed
     bindsym $mod+c layout toggle split
 
     # Make the current focus fullscreen
@@ -235,6 +241,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
+
     bindsym Print exec grim
 
 #

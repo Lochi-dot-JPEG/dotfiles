@@ -59,6 +59,8 @@ vim.pack.add({
 		{ src = "https://github.com/saghen/blink.cmp",
 			version = vim.version.range('1.x'),
 		},
+
+		{ src = "https://github.com/ziontee113/color-picker.nvim" },
 		{ src = "https://github.com/BurntSushi/ripgrep" },	
 		{ src = "https://github.com/sharkdp/fd" },
 		{ src = "https://github.com/akinsho/toggleterm.nvim" },
@@ -70,16 +72,23 @@ vim.pack.add({
 		{ src = "https://github.com/stevearc/oil.nvim" },
 		{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
+
+
+
+require("color-picker").setup()
 require("plugin.obsidian")
+require("plugin.godot")
 require("plugin.colorscheme")
-require"blink.cmp".setup({
+require("blink.cmp").setup({
 	keymap = { preset = "super-tab" },
 	appearance = {
 		nerd_font_variant = "mono",
 	},
 	--enabled = function() return not vim.tbl_contains({ "lua", "markdown" }, vim.bo.filetype) end,
-	completion = { documentation = { auto_show = false } },
-
+	completion = {
+			documentation = { auto_show = false },
+			trigger = { show_in_snippet = false},
+	},
 	sources = {
 		--default = { "lsp", "path", "snippets", "buffer" },
 		default = { "lsp", "path", "snippets" },
@@ -88,6 +97,17 @@ require"blink.cmp".setup({
 		--},
 	},
 	fuzzy = { implementation = "prefer_rust_with_warning" },
+})
+
+-- Markdown auto start pencil plugin
+vim.api.nvim_create_augroup("pencil", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = "pencil",
+	pattern = { "markdown", "mkd" },
+	callback = function()
+		vim.fn["pencil#init"]({ wrap = "soft" })
+		vim.opt_local.conceallevel = 2
+	end,
 })
 
 require 'nvim-treesitter.configs'.setup {
@@ -111,10 +131,13 @@ require 'nvim-treesitter.configs'.setup {
 -- --------------
 
 local map = vim.keymap.set
-map("n", "<leader>w", ":update<cr>", { desc = "[W]rite" })
-map("n", "<leader>W", ":SudaWrite<cr>", { desc = "[W]rite with sudo" })
+
+map("n", "<leader>w", ":update<cr>", { desc = "[W]rite", noremap = true, silent = true })
+map("n", "<leader>W", ":SudaWrite<cr>", { desc = "[W]rite with sudo", noremap = true, silent = true })
 map("n", "<leader>Q", ":quit<cr>", { desc = "[Q]uit" })
 map({ "n", "v", "x" }, "<leader>fb", vim.lsp.buf.format, { desc = "Format buffer" })
+map("n", "<C-c>", "<cmd>PickColor<cr>", opts)
+map("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
 
 -- TODO find a toggleterm alternative this is so bloated
 local Terminal = require("toggleterm.terminal").Terminal
@@ -161,4 +184,5 @@ vim.lsp.enable({
 	"lua_ls", "tinymist",
 	"rust_analyzer", "clangd",
 	"gdscript",
+	"markdownlint-cli2"
 })

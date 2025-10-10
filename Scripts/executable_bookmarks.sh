@@ -18,5 +18,5 @@ while IFS= read -r line; do
 	fi
 done < "$BOOKMARKFILE"
 
-PICKED=$(printf "%s\n" "${links[@]}" | fuzzel -d -l 40 -w 85 -p " ")
+PICKED=$(printf "%s\n" "${links[@]}" | rofi -dmenu -l 40 -w 85 -p " ")
 xdg-open "${PICKED//* /}"

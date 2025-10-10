@@ -8,13 +8,11 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/power",
-        "tray"
-    ],
-    "modules-center": [
+        "tray",
         "hyprland/workspaces",
-        //"river/tags",
-        "sway/workspaces"
+        "sway/workspaces",
     ],
+    "modules-center": [],
     "modules-right": [
         //"mpd",
         //"idle_inhibitor",
@@ -53,6 +51,13 @@
     // },
     "sway/workspaces": {
         "disable-scroll": true,
+		"persistent-workspaces": {
+				"1": [],
+				"2": [],
+				"3": [],
+				"4": [],
+				"5": [] 
+			},
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
