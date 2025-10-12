@@ -1,5 +1,0 @@
-session_name: config
-start_directory: ~/.config
-windows:
-  - window_name: .config
-    shell_command_before: blahajfetch

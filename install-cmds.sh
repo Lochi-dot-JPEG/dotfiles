@@ -39,3 +39,7 @@ git clone https://github.com/Lochi-dot-JPEG/Wallpapers
 
 systemctl --user enable --now mpDris2.service
 # enable mpDris2 for showing mpd in waybar
+#
+git clone https://github.com/supermariofps/hatsune-miku-windows-linux-cursors /tmp/mikucursors 
+cp /tmp/mikucursors/miku-cursor-linux ~/.local/share/icons/
+

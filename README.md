@@ -4,12 +4,10 @@
 
 ## Gruvbox matieral themed dotfiles for
 
-- AwesomeWM and Hyprland (both with keybinds for 40% keyboards
+- Sway and Hyprland
 - Kitty terminal
-- Neovim config (with ascii evangelion elevator start screen)
-
-## **BONUS**
-
+- Neovim
+- rmpc
 - Fastfetch with blahaj ascii art
 
 ## **Installation**

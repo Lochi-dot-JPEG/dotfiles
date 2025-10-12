@@ -1,6 +1,0 @@
-session_name: chezmoi config
-start_directory: ~/.local/share/chezmoi
-windows:
-  - window_name: .config
-    panes:
-    - shell_command: nvim

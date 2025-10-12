@@ -3,12 +3,14 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
+seat seat0 xcursor_theme breeze_cursors 22
 
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 set $alt Mod1
+set $floatingmod Tab
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -50,7 +52,7 @@ output HDMI-A-1 resolution 1920x1080 position 1920,0
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # Automatically make the laptop screen turn off when on monitor
-exec kanshi
+exec_always kanshi
 exec sh ~/Scripts/mpd_start.sh
 exec steam -silent
 exec nm-applet
@@ -86,12 +88,15 @@ input "type:keyboard" {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+z exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Shift+z exec grim - | swappy -f -
     bindsym $mod+Shift+c exec hyprpicker -a
     bindsym $mod+e exec $term
     bindsym $mod+w exec $browser
     bindsym $mod+Shift+w exec $altbrowser
-    #bindsym $mod+n exec $mpd
+
+# Screenshots
+    bindsym $mod+z exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+X exec grim -g "$(slurp $SLURP_ARGS)" "tmp.png" && tesseract "tmp.png" - | wl-copy && rm "tmp.png"
 
     bindsym $mod+b exec $bookmarks
     bindsym $mod+Tab exec $wallpaper
@@ -108,7 +113,7 @@ input "type:keyboard" {
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $alt normal
+    floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
@@ -189,6 +194,9 @@ input "type:keyboard" {
     # Swap focus between the tiling area and the floating area
     bindsym $mod+m focus mode_toggle
 
+    bindsym $mod+u resize shrink width 30px
+    bindsym $mod+i resize grow width 30px
+
     # Move focus to the parent container
     #bindsym $mod+a focus parent
 #
@@ -211,16 +219,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 20px
+    bindsym $down resize grow height 20px
+    bindsym $up resize shrink height 20px
+    bindsym $right resize grow width 20px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 20px
+    bindsym Down resize grow height 20px
+    bindsym Up resize shrink height 20px
+    bindsym Right resize grow width 20px
 
     # Return to default mode
     bindsym Return mode "default"

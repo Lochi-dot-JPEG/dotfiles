@@ -59,7 +59,6 @@ vim.pack.add({
 		{ src = "https://github.com/saghen/blink.cmp",
 			version = vim.version.range('1.x'),
 		},
-
 		{ src = "https://github.com/ziontee113/color-picker.nvim" },
 		{ src = "https://github.com/BurntSushi/ripgrep" },	
 		{ src = "https://github.com/sharkdp/fd" },
@@ -71,16 +70,36 @@ vim.pack.add({
 		{ src = "https://github.com/mason-org/mason.nvim" },
 		{ src = "https://github.com/stevearc/oil.nvim" },
 		{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+		{ src = "https://github.com/L3MON4D3/LuaSnip" },
+
 })
 
+require "mason".setup()
+require "color-picker".setup()
+require "plugin.obsidian"
+require("oil").setup({
+	lsp_file_methods = {
+		enabled = true,
+		timeout_ms = 1000,
+		autosave_changes = true,
+	},
+	columns = {
+		"permissions",
+		"icon",
+	},
+	float = {
+		max_width = 0.7,
+		max_height = 0.6,
+		border = "rounded",
+	},
+})
 
-
-require("color-picker").setup()
-require("plugin.obsidian")
-require("plugin.godot")
-require("plugin.colorscheme")
-require("blink.cmp").setup({
-	keymap = { preset = "super-tab" },
+require "plugin.godot"
+require "plugin.colorscheme"
+require "blink.cmp".setup({
+	keymap = { 
+		preset = "super-tab",
+	},
 	appearance = {
 		nerd_font_variant = "mono",
 	},
@@ -135,6 +154,7 @@ local map = vim.keymap.set
 map("n", "<leader>w", ":update<cr>", { desc = "[W]rite", noremap = true, silent = true })
 map("n", "<leader>W", ":SudaWrite<cr>", { desc = "[W]rite with sudo", noremap = true, silent = true })
 map("n", "<leader>Q", ":quit<cr>", { desc = "[Q]uit" })
+map("n", "<leader>ff", ":Oil<cr>", { desc = "[F]iles Oil" })
 map({ "n", "v", "x" }, "<leader>fb", vim.lsp.buf.format, { desc = "Format buffer" })
 map("n", "<C-c>", "<cmd>PickColor<cr>", opts)
 map("i", "<C-c>", "<cmd>PickColorInsert<cr>", opts)
@@ -161,24 +181,8 @@ local lazygit = Terminal:new({
 function _lazygit_toggle()
 	lazygit:toggle()
 end
-
 map("n", "<leader>h", "<cmd>lua _lazygit_toggle()<CR>", { desc = "Open Lazygit", noremap = true, silent = true })
 
-
-require "mason".setup()
-vim.api.nvim_create_autocmd('LspAttach', {
-	group = vim.api.nvim_create_augroup('my.lsp', {}),
-	callback = function(args)
-		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-		if client:supports_method('textDocument/completion') then
-			-- Optional: trigger autocompletion on EVERY keypress. May be slow!
-			local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-			client.server_capabilities.completionProvider.triggerCharacters = chars
-			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-		end
-	end,
-})
-vim.cmd [[set completeopt+=menuone,noselect,popup]]
 
 vim.lsp.enable({
 	"lua_ls", "tinymist",
